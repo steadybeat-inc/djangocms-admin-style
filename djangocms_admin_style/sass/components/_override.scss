@@ -138,9 +138,10 @@
 }
 
 @mixin branding-logo {
-    drop-shadow: 0 1px 4px $color-secondary;
+    text-shadow: 0 1px 4px $color-secondary;
     color: $color-secondary !important;
     font-size: 16px !important;
+    font-weight: 200;
     height: 40px;
     letter-spacing: .5rem !important;
 
@@ -394,6 +395,19 @@ body {
         }
     }
 }
+.cms-content-wizard {
+    .choice {
+        @include button-variant-inverse($btn-default-color, $btn-default-bgcolor, $btn-default-border, true);
+        &.active {
+            @include button-variant-inverse($btn-action-color, $btn-action-bgcolor, $btn-action-border, true);
+            padding: 20px 25px !important;
+        }
+        .info {
+            font-size: 12px;
+        }
+    }
+}
+
 
 //##############################################################################
 // CHANGELIST
@@ -1232,8 +1246,8 @@ body.djangocms-admin-style.login {
                 box-shadow: 0 1px 8px rgba($color-secondary, .8);
 
                 background-color: darken($skin-color, 10%);
-                border-bottom: 1px solid $color-primary;
-                height: 5px;
+                border-bottom: 1px solid $color-secondary;
+                height: 1px;
                 position: absolute;
                 width: 100%;
             }
@@ -1247,6 +1261,7 @@ body.djangocms-admin-style.login {
                     }
                 }
                 h2 {
+                    color: $gray-light !important;
                     font-size: 12px !important;
                     text-align: center;
                 }
@@ -1271,7 +1286,7 @@ body.djangocms-admin-style.login {
                         @include font-style($gray-clouded, 12px)
                     }
                     input {
-                        color: $color-input !important;
+                        @include input-style-text;
                     }
                 }
                 .submit-row {
@@ -1290,10 +1305,12 @@ body.djangocms-admin-style.login {
 
     #footer {
         display: block !important;
+        font-size: 14px !important;
         margin-top: 25px;
         text-align: center;
 
         p {
+            font-size: 12px !important;
             a.icon-logo {
                 @include link-style-normal;
 
@@ -1682,60 +1699,4 @@ body.djangocms-admin-style.login {
     color: $gray-light !important;
     font-size: 12px !important;
     font-weoght: 200 !important;
-}
-
-
-
-//##############################################################################
-// WELCOME
-
-.cms-welcome-bg {
-    background-color: darken($skin-color, 5%);
-}
-
-.cms-welcome {
-    a,
-    a:active,
-    a:focus,
-    a:hover {
-        text-decoration: none;
-    }
-    .cms-welcome-heading {
-        @include font-style($gray-light, 28px);
-
-        border-bottom: none;
-
-        .cms-icon {
-            color: $color-success;
-        }
-    }
-    .cms-welcome-logo,
-    .cms-welcome-logo:hover {
-        @include branding-logo;
-
-        background: none;
-        text-align: center;
-    }
-    .cms-welcome-section {
-        background-color: $skin-color;
-        border: 1px solid lighten($skin-color, 5%);
-        border-radius: 3px;
-        box-shadow: none;
-
-        * {
-            text-align: center;
-        }
-    }
-    .cms-welcome-links,
-    .cms-welcome-notes {
-        text-align: center;
-    }
-    .cms-welcome-links {
-        border-bottom: 1px solid darken($skin-color, 10%);
-        margin: 0;
-    }
-    .cms-welcome-notes {
-        border-top: 1px solid $skin-color;
-        padding: 20px 0;
-    }
 }

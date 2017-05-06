@@ -6385,6 +6385,102 @@ body.dashboard #container .breadcrumbs {
   color: #bfbfbf !important;
   font-size: 12px; }
 
+.cms-content-wizard .choice {
+  background-image: none !important;
+  margin-bottom: 0;
+  padding: 6px 20px !important;
+  border-radius: 3px !important;
+  color: #bfbfbf !important;
+  font-size: 12px !important;
+  line-height: 12px;
+  font-weight: normal;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+  background-color: #3c4347 !important;
+  border: 1px solid #475055 !important;
+  background-clip: padding-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; }
+  .cms-content-wizard .choice:focus {
+    color: #bfbfbf !important;
+    background-color: #24292b !important;
+    border-color: #6993b4 !important;
+    text-decoration: none !important; }
+  .cms-content-wizard .choice:hover {
+    color: #bfbfbf !important;
+    background-color: #475055 !important;
+    border-color: #535d63 !important;
+    text-decoration: none !important; }
+  .cms-content-wizard .choice:active {
+    color: #bfbfbf !important;
+    background-color: #24292b !important;
+    border-color: #5887ab !important;
+    box-shadow: none !important; }
+    .cms-content-wizard .choice:active:hover, .cms-content-wizard .choice:active:focus {
+      color: #bfbfbf !important;
+      background-color: #475055 !important;
+      border-color: #6993b4 !important; }
+  .cms-content-wizard .choice:active {
+    background-image: none !important; }
+  .cms-content-wizard .choice[disabled], .cms-content-wizard .choice[disabled]:hover, .cms-content-wizard .choice[disabled]:focus, .cms-content-wizard .choice[disabled]:active {
+    background-color: rgba(60, 67, 71, 0.4) !important;
+    border-color: rgba(71, 80, 85, 0.4) !important;
+    color: rgba(191, 191, 191, 0.4) true;
+    cursor: not-allowed;
+    box-shadow: none !important; }
+    .cms-content-wizard .choice[disabled]:before, .cms-content-wizard .choice[disabled]:hover:before, .cms-content-wizard .choice[disabled]:focus:before, .cms-content-wizard .choice[disabled]:active:before {
+      color: rgba(191, 191, 191, 0.4) true; }
+  .cms-content-wizard .choice.active {
+    background-image: none !important;
+    margin-bottom: 0;
+    padding: 6px 20px !important;
+    border-radius: 3px !important;
+    color: #d9d9d9 !important;
+    font-size: 12px !important;
+    line-height: 12px;
+    font-weight: normal;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+    background-color: #5887ab !important;
+    border: 1px solid #6993b4 !important;
+    background-clip: padding-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 20px 25px !important; }
+    .cms-content-wizard .choice.active:focus {
+      color: #d9d9d9 !important;
+      background-color: #466d8a !important;
+      border-color: #6993b4 !important;
+      text-decoration: none !important; }
+    .cms-content-wizard .choice.active:hover {
+      color: #d9d9d9 !important;
+      background-color: #6993b4 !important;
+      border-color: #7a9fbc !important;
+      text-decoration: none !important; }
+    .cms-content-wizard .choice.active:active {
+      color: #d9d9d9 !important;
+      background-color: #466d8a !important;
+      border-color: #5887ab !important;
+      box-shadow: none !important; }
+      .cms-content-wizard .choice.active:active:hover, .cms-content-wizard .choice.active:active:focus {
+        color: #d9d9d9 !important;
+        background-color: #6993b4 !important;
+        border-color: #6993b4 !important; }
+    .cms-content-wizard .choice.active:active {
+      background-image: none !important; }
+    .cms-content-wizard .choice.active[disabled], .cms-content-wizard .choice.active[disabled]:hover, .cms-content-wizard .choice.active[disabled]:focus, .cms-content-wizard .choice.active[disabled]:active {
+      background-color: rgba(88, 135, 171, 0.4) !important;
+      border-color: rgba(105, 147, 180, 0.4) !important;
+      color: rgba(217, 217, 217, 0.4) true;
+      cursor: not-allowed;
+      box-shadow: none !important; }
+      .cms-content-wizard .choice.active[disabled]:before, .cms-content-wizard .choice.active[disabled]:hover:before, .cms-content-wizard .choice.active[disabled]:focus:before, .cms-content-wizard .choice.active[disabled]:active:before {
+        color: rgba(217, 217, 217, 0.4) true; }
+  .cms-content-wizard .choice .info {
+    font-size: 12px; }
+
 .change-list #changelist.filtered #changelist-filter {
   background-color: #303639 !important; }
 
@@ -7983,23 +8079,25 @@ body.djangocms-admin-style.login {
       body.djangocms-admin-style.login #container #header #branding-drop-shadow {
         box-shadow: 0 1px 8px rgba(209, 103, 90, 0.8);
         background-color: #191c1d;
-        border-bottom: 1px solid #5887ab;
-        height: 5px;
+        border-bottom: 1px solid #d1675a;
+        height: 1px;
         position: absolute;
         width: 100%; }
       body.djangocms-admin-style.login #container #header #branding #header-logo {
         height: 80px;
         margin-top: -100px; }
         body.djangocms-admin-style.login #container #header #branding #header-logo h1 {
-          drop-shadow: 0 1px 4px #d1675a;
+          text-shadow: 0 1px 4px #d1675a;
           color: #d1675a !important;
           font-size: 16px !important;
+          font-weight: 200;
           height: 40px;
           letter-spacing: .5rem !important; }
           body.djangocms-admin-style.login #container #header #branding #header-logo h1 strong {
             font-size: 26px !important;
             font-weight: 200; }
       body.djangocms-admin-style.login #container #header #branding h2 {
+        color: #bfbfbf !important;
         font-size: 12px !important;
         text-align: center; }
     body.djangocms-admin-style.login #container #content {
@@ -8019,7 +8117,13 @@ body.djangocms-admin-style.login {
         font-weight: 200 !important;
         letter-spacing: .08rem !important; }
       body.djangocms-admin-style.login #container #content #content-main .form-row input {
+        background: url("../img/bg-pattern-carbon.png") #24292b !important;
+        border: 1px solid #303639 !important;
+        box-shadow: 0 1px 0 #475055 !important;
         color: #e9f8ff !important; }
+        body.djangocms-admin-style.login #container #content #content-main .form-row input:focus {
+          box-shadow: 0 0 2px #5887ab !important;
+          border: 1px solid #5887ab !important; }
       body.djangocms-admin-style.login #container #content #content-main .submit-row {
         margin: 0 !important; }
         body.djangocms-admin-style.login #container #content #content-main .submit-row input[type=submit] {
@@ -8072,18 +8176,21 @@ body.djangocms-admin-style.login {
         margin-bottom: 20px; }
   body.djangocms-admin-style.login #footer {
     display: block !important;
+    font-size: 14px !important;
     margin-top: 25px;
     text-align: center; }
-    body.djangocms-admin-style.login #footer p a.icon-logo {
-      color: #bfbfbf !important; }
-      body.djangocms-admin-style.login #footer p a.icon-logo:focus {
-        color: #d9d9d9 !important; }
-      body.djangocms-admin-style.login #footer p a.icon-logo:hover {
-        color: #d9d9d9 !important; }
-      body.djangocms-admin-style.login #footer p a.icon-logo:before {
-        margin-top: -2px; }
-    body.djangocms-admin-style.login #footer p span {
-      display: none; }
+    body.djangocms-admin-style.login #footer p {
+      font-size: 12px !important; }
+      body.djangocms-admin-style.login #footer p a.icon-logo {
+        color: #bfbfbf !important; }
+        body.djangocms-admin-style.login #footer p a.icon-logo:focus {
+          color: #d9d9d9 !important; }
+        body.djangocms-admin-style.login #footer p a.icon-logo:hover {
+          color: #d9d9d9 !important; }
+        body.djangocms-admin-style.login #footer p a.icon-logo:before {
+          margin-top: -2px; }
+      body.djangocms-admin-style.login #footer p span {
+        display: none; }
 
 @media only screen and (max-width: 768px), print {
   body.login #container {
@@ -8627,58 +8734,6 @@ body.djangocms-admin-style.login {
   color: #bfbfbf !important;
   font-size: 12px !important;
   font-weoght: 200 !important; }
-
-.cms-welcome-bg {
-  background-color: #24292b; }
-
-.cms-welcome a,
-.cms-welcome a:active,
-.cms-welcome a:focus,
-.cms-welcome a:hover {
-  text-decoration: none; }
-
-.cms-welcome .cms-welcome-heading {
-  color: #bfbfbf !important;
-  font-size: 28px !important;
-  font-weight: 200 !important;
-  letter-spacing: .08rem !important;
-  border-bottom: none; }
-  .cms-welcome .cms-welcome-heading .cms-icon {
-    color: #538642; }
-
-.cms-welcome .cms-welcome-logo,
-.cms-welcome .cms-welcome-logo:hover {
-  drop-shadow: 0 1px 4px #d1675a;
-  color: #d1675a !important;
-  font-size: 16px !important;
-  height: 40px;
-  letter-spacing: .5rem !important;
-  background: none;
-  text-align: center; }
-  .cms-welcome .cms-welcome-logo strong,
-  .cms-welcome .cms-welcome-logo:hover strong {
-    font-size: 26px !important;
-    font-weight: 200; }
-
-.cms-welcome .cms-welcome-section {
-  background-color: #303639;
-  border: 1px solid #3c4347;
-  border-radius: 3px;
-  box-shadow: none; }
-  .cms-welcome .cms-welcome-section * {
-    text-align: center; }
-
-.cms-welcome .cms-welcome-links,
-.cms-welcome .cms-welcome-notes {
-  text-align: center; }
-
-.cms-welcome .cms-welcome-links {
-  border-bottom: 1px solid #191c1d;
-  margin: 0; }
-
-.cms-welcome .cms-welcome-notes {
-  border-top: 1px solid #303639;
-  padding: 20px 0; }
 
 @media only screen and (max-width: 768px), print {
   html,
