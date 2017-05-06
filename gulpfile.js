@@ -16,7 +16,7 @@ var sass = require('gulp-sass');
 var iconfont = require('gulp-iconfont');
 var iconfontCss = require('gulp-iconfont-css');
 var sourcemaps = require('gulp-sourcemaps');
-var minifyCss = require('gulp-minify-css');
+// var minifyCss = require('gulp-minify-css');
 var eslint = require('gulp-eslint');
 var integrationTests = require('djangocms-casper-helpers/gulp');
 var webpack = require('webpack');
@@ -77,9 +77,9 @@ gulp.task('sass', function () {
                 cascade: false
             })
         ]))
-        .pipe(minifyCss({
-            rebase: false
-        }))
+        // .pipe(minifyCss({
+        //     rebase: false
+        // }))
         .pipe(gulpif(options.debug, sourcemaps.write()))
         .pipe(gulp.dest(PROJECT_PATH.css));
 });

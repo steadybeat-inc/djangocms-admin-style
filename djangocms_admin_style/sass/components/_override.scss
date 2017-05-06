@@ -1,0 +1,1741 @@
+//##############################################################################
+// MIXINS
+
+@mixin button-variant-inverse($color, $background, $border, $important: false) {
+    background-image: none important($important);
+    margin-bottom: 0; // For input.btn
+    padding: 6px 20px important($important);
+    border-radius: $btn-border-radius-base important($important);
+    color: $color important($important);
+    font-size: $font-size-small important($important);
+    line-height: $font-size-small;
+    font-weight: normal;
+    text-transform: none important($important);
+    letter-spacing: normal important($important);
+    background-color: $background important($important);
+    border: 1px solid $border important($important);
+    background-clip: padding-box;
+    appearance: none;
+    &:focus {
+        color: $color important($important);
+        background-color: darken($background, 10%) important($important);
+        border-color: lighten($color-primary, 5%) important($important);
+        text-decoration: none important($important);
+    }
+    &:hover {
+        color: $color important($important);
+        background-color: lighten($background, 5%) important($important);
+        border-color: lighten($border, 5%) important($important);
+        text-decoration: none important($important);
+    }
+    &:active {
+        color: $color important($important);
+        background-color: darken($background, 10%) important($important);
+        border-color: $color-primary important($important);
+        box-shadow: none important($important);
+
+        &:hover,
+        &:focus {
+            color: $color important($important);
+            background-color: lighten($background, 5%) important($important);
+            border-color: lighten($color-primary, 5%) important($important);
+        }
+    }
+    &:active {
+        background-image: none important($important);
+    }
+    &[disabled] {
+        &,
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: rgba($background, .4) important($important);
+            border-color: rgba($border, .4) important($important);
+            color: rgba($color, .4) important(1);
+            cursor: not-allowed;
+            box-shadow: none important($important);
+            &:before {
+                color: rgba($color, .4) important(1);
+            }
+        }
+    }
+}
+
+@mixin overlay-shadow {
+    box-shadow: 0 2px 4px rgba(black, .4);
+    border-bottom: 1px solid lighten($skin-color, 5%) !important;
+}
+
+@mixin font-style($color: $gray-light, $size: 12px) {
+    color: $color !important;
+    font-size: $size !important;
+    font-weight: 200 !important;
+    letter-spacing: .08rem !important;
+}
+
+@mixin input-style-text {
+    background: url("../img/bg-pattern-carbon.png") darken($skin-color, 5%) !important;
+    border: 1px solid $skin-color !important;
+    box-shadow: 0 1px 0 lighten($skin-color, 10%) !important;
+    color: $color-input !important;
+
+    &:focus {
+        box-shadow: 0 0 2px $color-primary !important;
+        border: 1px solid $color-primary !important;
+    }
+}
+
+@mixin input-style-select {
+    background: url("../img/bg-pattern-carbon.png") darken($skin-color, 5%) !important;
+    border: 1px solid $skin-color !important;
+    color: $color-input !important;
+
+    &:focus {
+        box-shadow: 0 0 2px $color-primary !important;
+        border: 1px solid $color-primary !important;
+    }
+    &:hover {
+        box-shadow: 0 0 2px $color-primary !important;
+        color: $color-input !important;
+    }
+}
+
+@mixin link-style-normal {
+    color: $gray-light !important;
+
+    &:focus {
+        color: lighten($gray-light, 10%) !important;
+    }
+    &:hover {
+        color: lighten($gray-light, 10%) !important;
+    }
+}
+
+@mixin link-style-normal-action {
+    color: $gray-light !important;
+
+    &:focus {
+        color: $color-primary !important;
+    }
+    &:hover {
+        color: lighten($gray-light, 10%) !important;
+    }
+}
+
+@mixin link-style-action {
+    @include link-style-normal-action;
+
+    color: darken($color-primary, 5%) !important;
+}
+
+@mixin separator-style {
+    background: none !important;
+    border-bottom: 1px solid lighten($skin-color, 5%);
+    border-top: 1px solid darken($skin-color, 5%);
+    height: 0px;
+    margin: 4px 0;
+    padding: 0;
+}
+
+@mixin branding-logo {
+    drop-shadow: 0 1px 4px $color-secondary;
+    color: $color-secondary !important;
+    font-size: 16px !important;
+    height: 40px;
+    letter-spacing: .5rem !important;
+
+    strong {
+        font-size: 26px !important;
+        font-weight: 200;
+    }
+}
+
+@mixin add-brightness($amt: 0.35) {
+  -o-filter: brightness($amt);
+  -ms-filter: brightness($amt);
+  -moz-filter: brightness($amt);
+  -webkit-filter: brightness($amt);
+}
+
+
+//##############################################################################
+// GLOBAL
+.cms-admin-sideframe {
+    ul.messagelist {
+        margin-top: 53px !important;
+
+        li {
+            box-shadow: 0 1px 5px rgba($color-input, .4);
+
+            background-color: rgba($color-input, .25) !important;
+            border: 1px solid rgba($color-input, .6) !important;
+            border-radius: 3px;
+            color: $color-input;
+            font-size: 14px;
+            font-weight: 200;
+            margin-bottom: 5px;
+            padding: 5px 10px 5px 45px;
+
+            &.info:before {
+                color: $color-primary;
+            }
+        }
+    }
+}
+#footer {
+    display: none;
+}
+.nav-pages {
+    background: transparent;
+}
+
+a,
+a:active,
+a:focus,
+a:hover,
+div,
+fieldset,
+form,
+h1,
+h2,
+h3,
+input,
+kbd,
+label,
+li,
+p,
+.form-row p,
+textarea,
+ul {
+    color: $gray-light;
+    font-family: $base-font-family;
+    font-size: $font-size-normal;
+    font-weight: 200;
+    letter-spacing: .08rem;
+}
+a {
+    cursor: pointer;
+}
+body:not(.cms-admin-sideframe) {
+    #header {
+        display: none;
+    }
+}
+
+// Popover
+
+.popover {
+    @include overlay-shadow;
+
+    background-color: $skin-color;
+    border-radius: 3px;
+
+    &.bottom > .arrow:after {
+        border-bottom-color: $skin-color;
+    }
+    thead th,
+    tfoot td {
+        color: $gray-light;
+    }
+}
+.table-icons .btn {
+    width: 54px;
+}
+
+
+//##############################################################################
+// BASE
+
+body {
+    background-color: $skin-color;
+    color: $gray-light;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: $gray-lighter;
+    font-weight: 400;
+    letter-spacing: .08rem;
+}
+input,
+select,
+textarea {
+    color: $color-input;
+}
+p,
+.description,
+.timezonewarning {
+    color: $gray-mist !important;
+    font-size: $font-size-normal-middle !important;
+    font-weight: 200;
+    letter-spacing: .08rem;
+}
+.add-another,
+.add-related,
+.change-related,
+.delete-related,
+.calendar-shortcuts a,
+span.datetimeshortcuts a
+.cms-btn-group {
+    @include button-variant-inverse($btn-default-color, $btn-default-bgcolor, $btn-default-border, true);
+    padding: 10px !important;
+}
+.add-another:before,
+.add-related:before,
+.change-related:before,
+.delete-related:before {
+    color: $btn-default-color;
+}
+.cms-btn-active {
+    box-shadow: none !important;
+    background-color: $btn-active-bgcolor !important;
+    border-color: $btn-active-border !important;
+    &:hover {
+        background-color: $btn-active-bgcolor !important;
+        border-color: $btn-active-border !important;
+    }
+}
+a.langcode,
+#container #content-main .module table tr a.langcode,
+a.lang-code,
+#container #content-main .module table tr a.lang-code {
+    background-color: $btn-active-bgcolor !important;
+    border-color: $btn-default-border !important;
+    color: $btn-default-color !important;
+    font-weight: 200 !important;
+    letter-spacing: .08rem !important;
+
+    &.active,
+    &.active.current,
+    &.current,
+    &:active,
+    &:focus,
+    &:hover {
+        color: $btn-default-color !important;
+        font-weight: 200 !important;
+    }
+    &.active.current {
+        border-color: $btn-active-border !important;
+    }
+}
+
+#inherited_permissions {
+    table tr td img {
+        filter: invert(100);
+    }
+}
+
+.delete-attributes-pair,
+.add-attributes-pair {
+    @include button-variant-inverse($btn-default-color, $btn-default-bgcolor, $btn-default-border, true);
+}
+
+.djangocms-attributes-field .attributes-pair .attributes-value {
+    width: 60% !important;
+}
+
+.delete-confirmation .colM#content {
+    padding: 0 25px !important;
+}
+.delete-confirmation .colM,
+.cms-admin-modal.delete-confirmation .colM,
+.cms_modal-window.delete-confirmation .colM,
+.popup.delete-confirmation .colM {
+    background-color: $skin-color;
+    box-shadow: none;
+
+    input[type=submit] {
+        @include button-variant-inverse($btn-action-color, $btn-action-bgcolor, $btn-action-border, true);
+    }
+    > p,
+    h1+p {
+        color: $gray-light !important;
+        margin-bottom: 10px;
+
+        &:before {
+            color: $color-warning;
+            font-size: 25px;
+            margin-top: -6px;
+        }
+    }
+    ul li,
+    li {
+        padding: 10px 0 10px !important;
+    }
+}
+
+.colM ul:not(.object-tools) {
+    border-bottom: none;
+    margin: 0 0 0 32px !important;
+
+    ul li,
+    li {
+        border-top: none;
+        color: $color-input;
+        font-size: 12px;
+        font-weight: 200;
+        padding-bottom: 2px;
+        padding-top: 2px;
+    }
+}
+.colM ul.errorlist {
+    margin: 0 0 10px 0 !important;
+}
+body {
+    #container,
+    &.dashboard #container {
+        .breadcrumbs {
+            border-bottom: none;
+            color: $gray-light !important;
+            font-size: 12px;
+        }
+    }
+}
+
+//##############################################################################
+// CHANGELIST
+
+.change-list {
+    #changelist {
+        &.filtered {
+            #changelist-filter {
+                background-color: $skin-color !important;
+            }
+            .paginator {
+                box-shadow: none;
+            }
+        }
+        .actions {
+            label {
+                font-size: 12px !important;
+                line-height: 38px;
+            }
+            select {
+                display: inline-block;
+            }
+        }
+        .paginator {
+            box-shadow: none !important;
+        }
+        .results {
+            box-shadow: none !important;
+            table {
+                background: darken($skin-color, 5%);
+                border: 1px solid lighten($skin-color, 10%);
+                border-radius: $border-radius-base;
+            }
+        }
+        #changelist-filter {
+            background-color: $skin-color !important;
+            h2,
+            h3 {
+                margin: 0 !important;
+                padding-left: 0 !important;
+            }
+            h2 {
+                border-bottom: solid 1px darken($skin-color, 5%);
+                color: $gray-light;
+                font-size: $font-size-normal-large !important;
+                padding: 10px 0 10px 0 !important;
+            }
+            h3 {
+                border-bottom: solid 1px darken($skin-color, 5%);
+                border-top: solid 1px lighten($skin-color, 5%);
+                color: $gray-light;
+                font-size: $font-size-normal;
+                font-weight: 200;
+                margin: 0 !important;
+                padding: 15px 0 5px 0!important;
+            }
+            ul {
+                border-bottom: solid 1px darken($skin-color, 5%);
+                border-top: solid 1px lighten($skin-color, 5%);
+                margin: 0 !important;
+                padding: 5px 0 5px 10px;
+            }
+            li {
+                font-size: $font-size-normal;
+                margin: 0;
+                padding: 5px 0;
+            }
+        }
+    }
+    .paginator {
+        background: none !important;
+        border-bottom: none !important;
+    }
+}
+
+
+//##############################################################################
+// CONTENT
+
+body {
+    #container {
+        .breadcrumbs {
+            border-bottom: none;
+        }
+    }
+}
+.module {
+    caption {
+        a.section,
+        a.section:hover,
+        a.section:link,
+        a.section:visited {
+            color: $gray-light;
+            font-size: $font-size-normal-large;
+            font-weight: 200;
+            letter-spacing: .1rem;
+            text-decoration: none;
+        }
+    }
+    h2 {
+        color: $gray-light;
+        font-size: $font-size-normal-large !important;
+        border-bottom: none;
+    }
+}
+.object-tools {
+    background: none;
+    &:before {
+        background: none;
+    }
+    li > a,
+    li > a:link {
+        @include button-variant-inverse($btn-default-color, $btn-default-bgcolor, $btn-default-border, true);
+    }
+    .addlink {
+        @include button-variant-inverse($btn-action-color, $btn-action-bgcolor, $btn-action-border, true);
+    }
+    .publishlink {
+        @include button-variant-inverse($btn-default-color, $btn-default-bgcolor, $btn-default-border, true);
+    }
+    .previewdraftlink {
+        @include button-variant-inverse($btn-default-color, $btn-default-bgcolor, $btn-default-border, true);
+    }
+    .revertlink {
+        @include button-variant-inverse($btn-default-color, $btn-default-bgcolor, $btn-default-border, true);
+    }
+    .historylink {
+        @include button-variant-inverse($btn-default-color, $btn-default-bgcolor, $btn-default-border, true);
+    }
+    .viewsitelink {
+        @include button-variant-inverse($btn-action-color, $btn-action-bgcolor, $btn-action-border, true);
+    }
+}
+.djangocms-admin-style .submit-row {
+    border-top: none;
+    .deletelink-box {
+        .deletelink {
+            @include button-variant-inverse($btn-default-color, $btn-default-bgcolor, $btn-default-border, true);
+            line-height: 16px;
+            padding: 10px 20px !important;
+            &:before {
+                margin-top: -3px;
+            }
+        }
+    }
+}
+
+
+//##############################################################################
+// DASHBOARD
+
+body.dashboard {
+    background-color: $skin-color;
+    #container {
+        #content-main {
+            table {
+                caption  {
+                    a:hover {
+                        color: $gray-lighter !important;
+                    }
+                }
+            }
+            table th,
+            table td {
+                border: none;
+                border-bottom: 1px dotted $skin-color;
+            }
+            .module tr:first-child {
+                th,
+                td {
+                    border-top: none;
+                }
+            }
+            .module tr:last-child {
+                th,
+                td {
+                    border-bottom: none;
+                }
+            }
+        }
+        #content-related {
+            background-color: lighten($skin-color, 5%);
+            border-left: 1px solid lighten($skin-color, 10%);
+            .module {
+                ul.actionlist {
+                    border-top: 1px solid lighten($skin-color, 10%);
+                    padding-top: 10px;
+                    li {
+                        border: none !important;
+                    }
+                    .mini {
+                        color: $gray-mist !important;
+                    }
+                }
+                h2 {
+                    color: $gray-light;
+                    font-size: 16px !important;
+                    font-weight: 200;
+                }
+                h3 {
+                    border-bottom: 1px solid $skin-color;
+                    color: $gray-clouded;
+                    font-size: 14px !important;
+                    font-weight: 200;
+                }
+            }
+        }
+    }
+}
+
+
+//##############################################################################
+// FILER
+
+.filebrowser {
+    #container #content {
+        box-shadow: none;
+    }
+    .navigator-table {
+        thead th {
+            background-color: $skin-color !important;
+            border-top: solid 1px lighten($skin-color, 5%) !important;
+            border-bottom: solid 1px darken($skin-color, 5%) !important;
+        }
+        .unfiled {
+            td {
+                background-color: transparent !important;
+
+                a {
+                    color: $gray-light !important;
+                    &:focus,
+                    &:hover {
+                        color: $gray-lighter !important;
+                    }
+                }
+            }
+        }
+        .unfiled,
+        .js-filer-dropzone {
+            .column-icon img {
+                border: none !important;
+                border-radius: 0;
+            }
+        }
+        td {
+            background-color: transparent !important;
+            border-bottom: none !important;
+            color: $gray-light;
+            font-size: $font-size-normal;
+
+            a {
+                color: $gray-light !important;
+                font-size: $font-size-normal !important;
+                font-weight: 200 !important;
+                &:focus,
+                &:hover {
+                    color: $gray-lighter !important;
+                }
+            }
+            .tyny {
+                color: $gray !important;
+            }
+        }
+        td.no-files {
+            background-color: lighten($skin-color, 5%) !important;
+            border-bottom: 1px solid darken($skin-color, 5%) !important;
+            color: $gray-light;
+            font-size: $font-size-normal-middle;
+            font-weight: 200;
+            span {
+                font-size: $font-size-normal-middle;
+            }
+        }
+        .column-icon img {
+            border: 1px solid $color-input;
+            border-radius: 2px;
+        }
+        .column-action {
+            padding: 3px 5px 2px 5px !important;
+
+            .action-button {
+                @include button-variant-inverse($btn-default-color, $btn-default-bgcolor, $btn-default-border, true);
+                padding: 9px !important;
+            }
+        }
+        tbody tr.selected .action-button span {
+            color: $gray-lighter !important;
+        }
+    }
+    .navigator-top-nav,
+    .navigator .nav-pages.paginator,
+    .paginator {
+        background-color: lighten($skin-color, 5%) !important;
+        border-top: 1px solid lighten($skin-color, 10%) !important;
+        border-bottom: 1px solid darken($skin-color, 5%) !important;
+    }
+}
+.filer-dropdown-menu {
+    @include overlay-shadow;
+
+    background-color: $skin-color;
+    border-radius: $border-radius-base;
+}
+.filer-dropdown-menu:before,
+.filer-tooltip:before {
+    background-color: $skin-color !important;
+}
+.filer-dropdown-container .filer-dropdown-menu.filer-dropdown-menu-checkboxes .fa-close,
+.filer-dropdown-container+.filer-dropdown-menu.filer-dropdown-menu-checkboxes .fa-close {
+    color: $gray-light !important;
+    &:focus,
+    &:hover {
+        color: $gray-lighter !important;
+    }
+}
+.filter-files-container .filer-dropdown-container.open+.filer-dropdown-menu-checkboxes {
+    border: 1px solid $color-primary;
+    border-bottom: 1px solid $color-primary !important;
+
+    label {
+        color: $gray-light !important;
+    }
+}
+.filer-dropdown-container .filer-dropdown-menu,
+.filer-navigator-breadcrumbs-dropdown-container .navigator-breadcrumbs-dropdown {
+    @include overlay-shadow;
+
+    background-color: $skin-color;
+    border-radius: $border-radius-base;
+
+    > li {
+        > a {
+            border-bottom: none;
+            color: $gray-light !important;
+            font-size: 12px !important;
+            font-weight: 200 !important;
+            padding: 5px 10px 3px !important;
+
+            &:hover {
+                background-color: darken($color-primary, 5%) !important;
+                color: $gray-lighter !important;
+
+                img {
+                    @include add-brightness(1.25);
+                }
+            }
+            img {
+                height: auto;
+                margin: 4px 10px 0 0;
+                width: 20px;
+            }
+        }
+        &:first-child a {
+            border-top-left-radius: 3px !important;
+            border-top-right-radius: 3px !important;
+        }
+        &:last-child a {
+            border-bottom-left-radius: 3px !important;
+            border-bottom-right-radius: 3px !important;
+        }
+    }
+}
+.filer-dropzone-upload-welcome .folder {
+    border-top: 1px dashed lighten($skin-color, 5%);
+
+}
+.filer-dropzone-upload-count {
+    border-bottom: 1px dashed lighten($skin-color, 5%);
+}
+.filer-dropzone-progress {
+    background-color: $color-primary;
+}
+.filer-dropzone-cancel {
+    border-top: 1px dashed lighten($skin-color, 5%);
+}
+.app-filer .module.collapsed h2 {
+    padding-left: 0 !important;
+}
+.image-info {
+    box-shadow: none;
+    &.image-info-detail {
+        background-color: lighten($skin-color, 5%);
+        border: 1px solid lighten($skin-color, 10%);
+        border-radius: 3px;
+
+        .image-details {
+            dt {
+                color: darken($gray-light, 15%);
+            }
+            dd {
+                color: darken($gray-light, 20%);
+            }
+        }
+        .image-info-title {
+            border: none;
+            color: $gray-light;
+            font-size: 18px;
+        }
+        .image-preview-container .image-preview {
+            border: 1px solid $gray-light;
+            border-radius: 3px;
+            outline: none;
+        }
+        .actions-list span,
+        .actions-list .text {
+            color: $gray-light;
+        }
+        .btn {
+            @include button-variant-inverse($btn-action-color, $btn-action-bgcolor, $btn-action-border, true);
+        }
+    }
+}
+.filebrowser .navigator .paginator {
+    border-top: solid 1px lighten($skin-color, 10%) !important;
+}
+.navigator-top-nav {
+    background-color: lighten($skin-color, 5%);
+    border-top: 1px solid lighten($skin-color, 10%);
+    border-bottom: 1px solid $skin-color;
+}
+.navigator-tools .actions-wrapper {
+    &.action-selected a {
+        color: $gray-light !important;
+        &:focus,
+        &:hover {
+            color: $gray-lighter !important;
+        }
+    }
+    a,
+    a:hover {
+        color: $gray !important;
+    }
+}
+.navigator-button,
+.navigator-button:link,
+.navigator-button:visited,
+.filter-files-container .filter-files-button {
+    @include button-variant-inverse($btn-action-color, $btn-action-bgcolor, $btn-action-border, true);
+    padding: 8px !important;
+}
+.filer-tooltip {
+    @include overlay-shadow;
+
+    background-color: $skin-color;
+    border-radius: $border-radius-base;
+    color: $gray-light !important;
+}
+
+
+//##############################################################################
+// FORMS
+
+form {
+    background: none;
+    box-shadow: none;
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="number"],
+    input[type="url"],
+    select,
+    select[multiple],
+    textarea {
+        box-shadow: 0 1px 0 lighten($skin-color, 10%) !important;
+        background: url("../img/bg-pattern-carbon.png") darken($skin-color, 5%) !important;
+        border-color: darken($skin-color, 5%) !important;
+        color: $color-input !important;
+        &:focus {
+            box-shadow: 0 0 2px $color-primary !important;
+            border: 1px solid $color-primary !important;
+        }
+    }
+    fieldset {
+        &.collapse h2 {
+            color: $gray-light;
+        }
+        &.collapsed {
+            .collapse-toggle {
+                color: $color-primary;
+            }
+        }
+    }
+    label,
+    label.aligned,
+    .field-type label,
+    .sortedm2m label,
+    .vCheckboxLabel {
+        color: $gray-light !important;
+        font-size: $font-size-normal-middle !important;
+        font-weight: 200 !important;
+        &.required {
+            color: $gray-lighter !important;
+            font-weight: 400 !important;
+        }
+        &.btn {
+            color: $btn-default-color !important;
+        }
+        &.btn-default,
+        &.btn-link {
+            color: $btn-default-color !important;
+        }
+    }
+    .checkbox-row {
+        label {
+            color: $gray-light !important;
+            font-size: $font-size-normal-middle !important;
+            font-weight: 200;
+        }
+    }
+    .form-row {
+        &.field-attributes {
+            .djangocms-attributes-field {
+                .attributes-pair .attributes-value {
+                    width: 60% !important;
+                }
+                .delete-attributes-pair,
+                .add-attributes-pair {
+                    @include button-variant-inverse($btn-default-color, $btn-default-bgcolor, $btn-default-border, true);
+                }
+            }
+        }
+        &.field-file,
+        &.field-sha1,
+        &.field-display_canonical {
+            div > label {
+                display: block;
+            }
+            p {
+                color: $gray !important;
+                margin-left: 20px !important;
+
+                input[type=file] {
+                    border: none !important;
+                }
+                .clearable-file-input {
+                    margin-left: 20px;
+
+                    input[type=checkbox] {
+                        margin-right: 0 !important;
+                    }
+                }
+            }
+            p.file-upload a {
+                margin-left: 6px;
+            }
+        }
+        .filer-dropzone {
+            background-color: lighten($skin-color, 5%) !important;
+            border: 1px solid lighten($skin-color, 10%) !important;
+
+            .filerFile {
+                top: 28px;
+
+                img {
+                    border: 1px solid $color-input;
+                }
+                * {
+                    color: $gray-light;
+                }
+                .filerClearer,
+                .related-lookup.related-lookup-change {
+                    @include button-variant-inverse($btn-default-color, $btn-default-bgcolor, $btn-default-border, true);
+                }
+                .related-lookup {
+                    @include button-variant-inverse($btn-action-color, $btn-action-bgcolor, $btn-action-border, true);
+                }
+            }
+            .icon {
+                font-size: 16px;
+            }
+        }
+        .related-lookup {
+            @include button-variant-inverse($btn-action-color, $btn-action-bgcolor, $btn-action-border, true);
+            padding: 8px !important;
+        }
+    }
+}
+form .errors,
+form .form-row:not(tr).errors,
+.errornote, {
+    @include font-style($color-input, 12px);
+
+    background-color: rgba(darken($color-danger, 40%), .4) !important;
+    border: 1px solid $color-danger !important;
+}
+ul.errorlist {
+    margin: 0 0 10px 0 !important;
+    padding: 0 !important;
+
+    li {
+        color: $color-danger !important;
+        font-size: 12px !important;
+    }
+}
+a.button,
+button,
+input[type="submit"],
+input[type="button"] {
+    @include button-variant-inverse($btn-default-color, $btn-default-bgcolor, $btn-default-border, true);
+}
+#id_password {
+    background-color: lighten($skin-color, 5%);
+    border-radius: $border-radius-base;
+    color: $gray;
+    padding: 10px 5px;
+}
+.selector .selector-available,
+.selector .selector-chosen {
+    background-color: lighten($skin-color, 5%);
+    border: 1px solid lighten($skin-color, 10%);
+    h2 {
+        color: $gray-light !important;
+    }
+    select[multiple] {
+        box-shadow: 0 1px 0 lighten($skin-color, 10%) !important;
+        background: url("../img/bg-pattern-carbon.png") darken($skin-color, 5%) !important;
+        border-color: darken($skin-color, 5%) !important;
+        color: $color-input !important;
+        &:focus {
+            box-shadow: 0 0 2px $color-primary !important;
+            border: 1px solid $color-primary !important;
+        }
+        option {
+            border: none !important;
+            font-size: 12px !important;
+            padding: 5px 10px;
+        }
+    }
+    .selector-filter {
+        background-color: lighten($skin-color, 5%);
+    }
+}
+
+form .select2-dropdown-open.select2-drop-above .select2-choice,
+form .select2-dropdown-open.select2-drop-above .select2-choices,
+.select2-container .select2-choice {
+    @include input-style-select;
+}
+.select2-drop {
+    background-color: lighten($skin-color, 5%) !important;
+    border-radius: 0 0 3px 3px;
+}
+.select2-drop-active {
+    border: 1px solid $color-primary !important;
+}
+.select2-search input {
+    @include input-style-text;
+}
+.select2-results {
+    .select2-result-selectable {
+        color: $gray-light !important;
+
+        * {
+            font-size: 12px !important;
+        }
+    }
+    .select2-highlighted {
+        @include button-variant-inverse($btn-action-color, $btn-action-bgcolor, $btn-action-border, true);
+
+        * {
+            font-size: 12px !important;
+        }
+    }
+}
+
+span.datetimeshortcuts,
+.calendar-shortcuts {
+    a {
+        @include button-variant-inverse($btn-default-color, $btn-default-bgcolor, $btn-default-border, true);
+        display: inline-block;
+        height: 14px;
+        line-height: 14px;
+        padding: 10px !important;
+    }
+}
+
+div.calendarbox,
+div.clockbox {
+    @include overlay-shadow;
+
+    background: $skin-color !important;
+    background-color: $skin-color !important;
+    border: 1px solid $skin-color;
+
+    h2,
+    p.calendar-cancel {
+        background-color: $skin-color !important;
+        color: $gray-light !important;
+        font-size: 12px !important;
+        padding: 5px 20px !important;
+    }
+    h2 {
+        border-bottom: 1px solid darken($skin-color, 5%);
+    }
+    p.calendar-cancel {
+        border-top: 1px solid lighten($skin-color, 5%) !important;
+        a {
+            color: $gray-light !important;
+        }
+    }
+    li {
+        border: none !important;
+    }
+    .timelist li a {
+        background-color: darken($skin-color, 5%) !important;
+        border-bottom: 1px solid darken($skin-color, 10%);
+        border-top: 1px solid $skin-color;
+        font-size: 12px !important;
+        padding: 5px 20px !important;
+
+        &:hover {
+            background-color: $color-primary !important;
+            color: $gray-lighter !important;
+        }
+    }
+}
+div.calendarbox {
+    width: 250px !important;
+
+    table {
+        caption {
+            background-color: $skin-color;
+            border-bottom: 1px solid darken($skin-color, 5%);
+            border-top: 1px solid lighten($skin-color, 5%);
+            color: $gray-lighter !important;
+            font-size: 12px !important;
+        }
+        th {
+            background-color: lighten($skin-color, 5%);
+            border-bottom: 1px solid daekrn($skin-color, 5%);
+            border-top: 1px solid lighten($skin-color, 10%);
+            color: $gray-light !important;
+            font-size: 12px;
+        }
+        td {
+            background-color: $skin-color;
+            border-top: 1px solid lighten($skin-color, 5%);
+            border-bottom: 1px solid daekrn($skin-color, 5%);
+            font-size: 12px;
+
+            &.nonday {
+                background-color: darken($skin-color, 5%) !important;
+            }
+            &.selected a {
+                background-color: $color-primary !important;
+                color: $gray-lighter !important;
+            }
+            &.today a {
+                background-color: $color-primary !important;
+                color: $gray-lighter !important;
+            }
+            a {
+                &:hover {
+                    background-color: desaturate(darken($color-primary, 20%), 10%) !important;
+                }
+            }
+        }
+    }
+    .calendar-shortcuts {
+        background-color: $skin-color;
+        border-bottom: 1px solid daekrn($skin-color, 5%) !important;
+        border-top: 1px solid lighten($skin-color, 5%) !important;
+        font-size: 12px;
+        color: lighten($skin-color, 5%) !important;
+    }
+    .calendarnav-next,
+    .calendarnav-previous {
+    }
+}
+
+
+//##############################################################################
+// ICONS
+
+.addlink,
+.changelink,
+.deletelink,
+.inline-deletelink,
+.pastelink,
+.icon-arrow-right,
+.icon-logo,
+.add-row a,
+.related-lookup,
+.backtoroot,
+.movetolink span,
+.file-upload a,
+a.insertlinkButton,
+.field-get_attachment_address a,
+a.selector-clearall,
+a.selector-chooseall,
+.selector-remove,
+.selector-add,
+.add-another,
+.add-related,
+.change-related,
+.delete-related,
+.inlinechangelink,
+a[id*="calendarlink"],
+a[id*="clocklink"],
+.calendarnav-previous,
+.calendarnav-next,
+.messagelist li.success,
+.messagelist li.error,
+.messagelist li.info,
+.messagelist li.warning,
+.cms-admin-modal.delete-confirmation .colM > p,
+.delete-confirmation .colM h1 + p,
+.admin_shortcuts .shortcuts li a {
+    &:before {
+        font-size: $font-size-normal-middle;
+    }
+}
+
+
+//##############################################################################
+// LOGIN
+
+body.djangocms-admin-style.login {
+    background-color: darken($skin-color, 5%) !important;
+
+    #container {
+        background: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        width: 100% !important;
+
+        #header {
+            border-top: 1px solid lighten($skin-color, 5%) !important;
+            background-color: $skin-color !important;
+            border-radius: 0 !important;
+            display: block;
+            position: relative;
+
+            #branding-drop-shadow {
+                box-shadow: 0 1px 8px rgba($color-secondary, .8);
+
+                background-color: darken($skin-color, 10%);
+                border-bottom: 1px solid $color-primary;
+                height: 5px;
+                position: absolute;
+                width: 100%;
+            }
+            #branding {
+                #header-logo {
+                    height: 80px;
+                    margin-top: -100px;
+
+                    h1 {
+                        @include branding-logo;
+                    }
+                }
+                h2 {
+                    font-size: 12px !important;
+                    text-align: center;
+                }
+            }
+        }
+        #content {
+            background-color: $skin-color !important;
+            border-bottom: 1px solid darken($skin-color, 10%) !important;
+            border-radius: 0 !important;
+            padding: 10px 0 20px !important;
+            width: 100% !important;
+
+            #content-main,
+            p.errornote {
+                display: block;
+                margin: 0 auto;
+                width: 300px !important;
+            }
+            #content-main {
+                .form-row {
+                    label {
+                        @include font-style($gray-clouded, 12px)
+                    }
+                    input {
+                        color: $color-input !important;
+                    }
+                }
+                .submit-row {
+                    margin: 0 !important;
+
+                    input[type=submit] {
+                        @include button-variant-inverse($btn-action-color, $btn-action-bgcolor, $btn-action-border, true);
+                    }
+                }
+            }
+            p.errornote {
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    #footer {
+        display: block !important;
+        margin-top: 25px;
+        text-align: center;
+
+        p {
+            a.icon-logo {
+                @include link-style-normal;
+
+                &:before {
+                    margin-top: -2px;
+                }
+            }
+            span {
+                display: none;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px), print {
+    body.login #container {
+        max-width: initial !important;
+    }
+}
+
+
+//##############################################################################
+// MODAL
+
+.popup,
+.cms-admin-modal,
+.cms_modal-window {
+    background-color: $skin-color;
+}
+
+
+//##############################################################################
+// PAGE TREE
+
+.cms-pagetree {
+    border: none !important;
+    border-top: 1px solid lighten($skin-color, 10%) !important;
+    border-bottom: 1px solid darken($skin-color, 5%) !important;
+    .cms-btn.cms-icon {
+        @include button-variant-inverse($btn-default-color, $btn-default-bgcolor, $btn-default-border, true);
+        font-size: 14px !important;
+        height: 34px !important;
+        line-height: 16px;
+        margin-top: 1px !important;
+        padding: 0 !important;
+        width: 34px !important;
+        &:before {
+            margin: -8px 0 0 -7px !important;
+        }
+    }
+}
+.cms-pagetree-wrapper .cms-pagetree-root.filtered {
+    box-shadow: none !important;
+}
+.cms-pagetree-header {
+    background-color: lighten($skin-color, 5%) !important;
+}
+.cms-pagetree-header-filter-container {
+    @include overlay-shadow;
+    background-color: $skin-color !important;
+    border: 1px solid $color-primary;
+    h3 {
+        color: $gray-light !important;
+    }
+    ul {
+        padding-left: 10px !important;
+        li.selected a {
+            color: $color-primary;
+        }
+    }
+}
+.cms-pagetree-header-search-reset {
+    @include link-style-action;
+}
+.cms-pagetree-section h2 {
+    @include font-style($gray-light, 16px);
+}
+.cms-pagetree-wrapper .cms-pagetree-header-search .cms-pagetree-header-search-btn {
+    @include button-variant-inverse($btn-action-color, $btn-action-bgcolor, $btn-action-border, true);
+    line-height: 30px;
+    padding: 6px 10px !important;
+}
+.cms-pagetree-wrapper .cms-pagetree-root .cms-btn-action {
+    @include button-variant-inverse($btn-action-color, $btn-action-bgcolor, $btn-action-border, true);
+    line-height: 24px;
+}
+.cms-pagetree-sites-list .cms-pagetree-dropdown-trigger {
+    @include link-style-normal-action;
+}
+.cms-pagetree-dropdown-menu {
+    border: 1px solid $skin-color;
+
+    @include overlay-shadow;
+
+    background-color: $skin-color !important;
+    border-radius: 2px;
+    &:before {
+        background-color: $skin-color !important;
+    }
+    .cms-pagetree-dropdown-menu-inner {
+        background-color: $skin-color !important;
+
+        a {
+            @include font-style(lighten($gray-light, 10%), 12px);
+
+            &:hover {
+                background-color: darken($color-primary, 5%);
+                color: lighten($gray-light, 20%) !important;
+            }
+        }
+    }
+    .label {
+        @include font-style($gray-light, 12px);
+        border: none;
+    }
+}
+.cms-pagetree-sites-list {
+    .cms-pagetree-dropdown-menu-inner {
+        li {
+            &:first-child {
+                border-bottom: 1px solid lighten($skin-color, 5%);
+
+                span {
+                    border-bottom: 1px solid darken($skin-color, 5%);
+                    margin: 0;
+                }
+            }
+        }
+    }
+    .cms-pagetree-dropdown-trigger {
+        visibility: hidden;
+    }
+}
+.cms-pagetree-dropdown-menu-inner {
+    li {
+        a {
+            padding: 5px 15px;
+
+            span {
+                font-size: 12px !important;
+            }
+        }
+        p {
+            color: $color-success !important;
+            font-weight: 400;
+
+            strong {
+                color: $gray-light !important;
+            }
+        }
+        span {
+            color: $gray-light !important;
+            font-size: 12px !important;
+        }
+    }
+}
+.cms-pagetree-node-state {
+    height: 14px;
+    width: 14px;
+}
+.cms-pagetree-node-state-published {
+    background-color: $color-success !important;
+    border-color: $color-success !important;
+    color: $color-success !important;
+}
+.cms-pagetree-node-state-dirty {
+    background-color: $color-primary !important;
+    border-color: $color-primary !important;
+    color: $color-primary !important;
+}
+.cms-pagetree-node-state-unpublished {
+    background-color: $gray !important;
+    border-color: $gray !important;
+    color: $gray !important;
+}
+.cms-icon-info {
+    color: $color-primary !important;
+    font-size: 12px;
+}
+.cms-icon-check-square,
+.cms-icon-check-square:before {
+    color: $color-success !important;
+}
+.cms-icon-minus-square,
+ .cms-icon-minus-square:before {
+    color: $gray !important;
+}
+.cms-tree-item-preview {
+    a,
+    a:before {
+        color: $gray-light !important;
+    }
+}
+.cms-pagetree-dropdown-separator {
+    @include separator-style;
+}
+.cms-pagetree-section {
+    background-color: $skin-color !important;
+}
+
+.cms-pagetree-wrapper .cms-pagetree .cms-pagetree-dropdown.cms-pagetree-dropdown-menu-open .cms-btn {
+    @include button-variant-inverse($btn-default-color, $btn-default-bgcolor, $btn-default-border, true);
+}
+.cms-pagetree-header-lang {
+    color: $gray-light !important;
+    font-weight: 700 !important;
+
+    &:hover {
+        color: $gray-light !important;
+        text-decoration: underline !important;
+    }
+}
+
+.jstree-grid-wrapper {
+    background-color: darken($skin-color, 5%) !important;
+}
+.jstree-django-cms .jstree-grid-header {
+    background-color: darken($skin-color, 5%) !important;
+    border-bottom: 1px solid darken($skin-color, 5%) !important;
+    color: $gray-light;
+}
+.jstree-django-cms .jstree-container-ul {
+    background-color: darken($skin-color, 5%) !important;
+    .jstree-node {
+        .jstree-anchor {
+            @include font-style($gray-light, 12px);
+
+            background-color: $skin-color !important;
+            border: 1px solid lighten($skin-color, 5%) !important;
+            border-bottom: 1px solid darken($skin-color, 5%) !important;
+            margin-top: 0;
+
+            &:hover {
+                background-color: lighten($skin-color, 10%) !important;
+                border: 1px solid lighten($skin-color, 5%) !important;
+                border-bottom: 1px solid darken($skin-color, 5%) !important;
+                color: $gray-lighter !important;
+            }
+        }
+    }
+}
+.jstree-django-cms {
+    .jstree-ocl {
+        color: $gray-light !important;
+    }
+    .jstree-grid-header {
+        border-bottom: none;
+    }
+    .jstree-grid-column .jstree-grid-cell {
+        background-color: $skin-color !important;
+        border-bottom: 1px solid darken($skin-color, 5%) !important;
+        border-left: 1px solid lighten($skin-color, 5%) !important;
+        border-right: 1px solid darken($skin-color, 5%) !important;
+        border-top: 1px solid lighten($skin-color, 5%) !important;
+        height: 47px !important;
+
+        .jstree-clicked,
+        .jstree-hovered {
+            background-color: lighten($skin-color, 10%) !important;
+        }
+        .cms-tree-col {
+            float: none;
+        }
+    }
+    #j1_1_anchor {
+        margin-top: -1px !important;
+    }
+}
+
+
+//##############################################################################
+// TABLES
+
+.dashboard table,
+.change-list table,
+.tabular table,
+.results table,
+#change-history {
+    background: url("../img/bg-pattern-carbon.png") darken($skin-color, 5%) !important;
+    border: 1px solid lighten($skin-color, 5%);
+    border-radius: $border-radius-base;
+
+    thead {
+        th {
+            background-color: lighten($skin-color, 5%) !important;
+            border-bottom: 1px solid lighten($skin-color, 5%);
+        }
+        a,
+        span {
+            color: $gray-light !important;
+            &:hover {
+                background: none !important;
+                color: lighten($gray-light, 5%) !important;
+            }
+        }
+    }
+    tbody tr {
+        td,
+        th {
+            border-bottom: 1px dotted $skin-color;
+            color: $gray-light !important;
+            font-weight: 200;
+        }
+        &.selected {
+            color: $gray-lighter;
+            background: url("../img/bg-pattern-carbon.png") rgba(darken($color-primary, 10%), .5) !important;
+        }
+        &:hover {
+            background: url("../img/bg-pattern-carbon.png") $skin-color !important;
+        }
+    }
+    .row1 {
+        background: url("../img/bg-pattern-carbon.png") darken($skin-color, 5%) !important;
+    }
+    .row2 {
+        background: url("../img/bg-pattern-carbon.png") darken($skin-color, 5%) !important;
+    }
+}
+.results #changelist-form table,
+#changelist-form table {
+    border: 1px solid lighten($skin-color, 10%) !important;
+    border-radius: 3px;
+    box-shadow: none !important;
+}
+#result_list tr[style*=background] {
+    background-color: darken($color-primary, 25%) !important;
+}
+#change-history tr.selected a,
+#change-history tr.selected span,
+#change-history tr.selected td,
+.change-list table tr.selected a,
+.change-list table tr.selected span,
+.change-list table tr.selected td
+.dashboard table tr.selected a,
+.dashboard table tr.selected span,
+.dashboard table tr.selected td,
+.results table tr.selected a,
+.results table tr.selected span,
+.results table tr.selected td,
+.tabular table tr.selected a,
+.tabular table tr.selected span,
+.tabular table tr.selected td {
+    color: $color-input !important;
+}
+
+#change-history .row1,
+#change-history .row2,
+.change-list table .row1,
+.change-list table .row2,
+.dashboard table .row1,
+.dashboard table .row2,
+.results table .row1,
+.results table .row2,
+.tabular table .row1,
+.tabular table .row2 {
+    background-color: darken($skin-color, 5%);
+}
+
+#change-history tbody tr:hover,
+#result_list tbody tr:hover,
+.results table tbody tr:hover {
+    background-color: $skin-color;
+}
+
+#change-list .paginator,
+.change-list .paginator,
+.change-list #changelist .paginator,
+.change-list #changelist.filtered .paginator,
+.change-list #changelist .results+.paginator {
+    box-shadow: 0 0 0 $skin-color !important;
+
+    background: none !important;
+    border: none !important;
+    color: $gray-light !important;
+}
+#change-history td p,
+#change-history th p,
+.change-list table td p,
+.change-list table th p,
+.dashboard table td p,
+.dashboard table th p,
+.results table td p,
+.results table th p,
+.tabular table td p,
+.tabular table th p {
+    color: $gray-light !important;
+    font-size: 12px !important;
+    font-weoght: 200 !important;
+}
+
+
+
+//##############################################################################
+// WELCOME
+
+.cms-welcome-bg {
+    background-color: darken($skin-color, 5%);
+}
+
+.cms-welcome {
+    a,
+    a:active,
+    a:focus,
+    a:hover {
+        text-decoration: none;
+    }
+    .cms-welcome-heading {
+        @include font-style($gray-light, 28px);
+
+        border-bottom: none;
+
+        .cms-icon {
+            color: $color-success;
+        }
+    }
+    .cms-welcome-logo,
+    .cms-welcome-logo:hover {
+        @include branding-logo;
+
+        background: none;
+        text-align: center;
+    }
+    .cms-welcome-section {
+        background-color: $skin-color;
+        border: 1px solid lighten($skin-color, 5%);
+        border-radius: 3px;
+        box-shadow: none;
+
+        * {
+            text-align: center;
+        }
+    }
+    .cms-welcome-links,
+    .cms-welcome-notes {
+        text-align: center;
+    }
+    .cms-welcome-links {
+        border-bottom: 1px solid darken($skin-color, 10%);
+        margin: 0;
+    }
+    .cms-welcome-notes {
+        border-top: 1px solid $skin-color;
+        padding: 20px 0;
+    }
+}
