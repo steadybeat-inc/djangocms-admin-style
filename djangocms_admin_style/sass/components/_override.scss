@@ -28,19 +28,21 @@
         border-color: lighten($border, 5%) important($important);
         text-decoration: none important($important);
     }
+    &.active,
     &:active {
         color: $color important($important);
         background-color: darken($background, 10%) important($important);
-        border-color: $color-primary important($important);
+        border-color: $color-secondary important($important);
         box-shadow: none important($important);
 
         &:hover,
         &:focus {
             color: $color important($important);
-            background-color: lighten($background, 5%) important($important);
-            border-color: lighten($color-primary, 5%) important($important);
+            background-color: darken($background, 5%) important($important);
+            border-color: lighten($color-secondary, 5%) important($important);
         }
     }
+    &.active,
     &:active {
         background-image: none important($important);
     }
@@ -140,14 +142,17 @@
 @mixin branding-logo {
     text-shadow: 0 1px 4px $color-secondary;
     color: $color-secondary !important;
-    font-size: 16px !important;
+    font-size: 12px !important;
     font-weight: 200;
     height: 40px;
-    letter-spacing: .5rem !important;
+    letter-spacing: .2rem !important;
 
-    strong {
-        font-size: 26px !important;
-        font-weight: 200;
+    i {
+        font-size: 24px !important;
+    }
+    sup {
+        font-size: 8px !important;
+        top: -0.2rem;
     }
 }
 
@@ -161,6 +166,7 @@
 
 //##############################################################################
 // GLOBAL
+
 .cms-admin-sideframe {
     ul.messagelist {
         margin-top: 53px !important;
@@ -228,19 +234,60 @@ body:not(.cms-admin-sideframe) {
 .popover {
     @include overlay-shadow;
 
-    background-color: $skin-color;
-    border-radius: 3px;
+    background-color: $skin-color !important;
+    border-radius: 3px !important;
 
     &.bottom > .arrow:after {
-        border-bottom-color: $skin-color;
+        border-bottom-color: $skin-color !important;
     }
     thead th,
     tfoot td {
-        color: $gray-light;
+        color: $gray-light !important;
     }
 }
 .table-icons .btn {
-    width: 54px;
+    width: 54px !important;
+}
+
+
+//##############################################################################
+// ALDRYN
+
+.aldryn-bootstrap3-grid {
+    .field-box label {
+        display: block;
+        text-align: left;
+    }
+    fieldset.module.aligned:first-child .form-row {
+        border-bottom: none !important;
+    }
+}
+.aldryn-bootstrap3-context label.active {
+    outline: none !important;
+}
+.aldryn-bootstrap3 .btn-group .btn {
+    &:first-child a,
+    &:first-child a.active {
+        border-bottom-left-radius: 3px !important;
+        border-top-left-radius: 3px !important;
+    }
+    &:last-child a,
+    &:last-child:not(:first-child),
+    &:last-child a.active {
+        border-top-left-radius: 3px !important;
+        border-bottom-right-radius: 3px !important;
+    }
+    &:not(.btn-default) {
+        padding: 2px 20px !important;
+        &.active {
+            border-color: $color-secondary !important;
+            box-shadow: none !important;
+        }
+    }
+    &.btn-link {
+        padding: 6px 20px !important;
+    }
+
 }
 
 
@@ -270,7 +317,7 @@ p,
 .description,
 .timezonewarning {
     color: $gray-mist !important;
-    font-size: $font-size-normal-middle !important;
+    font-size: $font-size-normal !important;
     font-weight: 200;
     letter-spacing: .08rem;
 }
@@ -280,6 +327,7 @@ p,
 .delete-related,
 .calendar-shortcuts a,
 span.datetimeshortcuts a
+.btn-group,
 .cms-btn-group {
     @include button-variant-inverse($btn-default-color, $btn-default-bgcolor, $btn-default-border, true);
     padding: 10px !important;
@@ -332,6 +380,7 @@ a.lang-code,
 .delete-attributes-pair,
 .add-attributes-pair {
     @include button-variant-inverse($btn-default-color, $btn-default-bgcolor, $btn-default-border, true);
+    padding: 10px !important;
 }
 
 .djangocms-attributes-field .attributes-pair .attributes-value {
@@ -367,10 +416,11 @@ a.lang-code,
         padding: 10px 0 10px !important;
     }
 }
-
+.delete-confirmation .colM ul:not(.object-tools) {
+    margin: 0 0 0 32px !important;
+}
 .colM ul:not(.object-tools) {
     border-bottom: none;
-    margin: 0 0 0 32px !important;
 
     ul li,
     li {
@@ -541,17 +591,31 @@ body {
         @include button-variant-inverse($btn-action-color, $btn-action-bgcolor, $btn-action-border, true);
     }
 }
-.djangocms-admin-style .submit-row {
-    border-top: none;
-    .deletelink-box {
-        .deletelink {
-            @include button-variant-inverse($btn-default-color, $btn-default-bgcolor, $btn-default-border, true);
-            line-height: 16px;
-            padding: 10px 20px !important;
-            &:before {
-                margin-top: -3px;
+.djangocms-admin-style {
+    .submit-row {
+        border-top: none;
+        .deletelink-box {
+            .deletelink {
+                @include button-variant-inverse($btn-default-color, $btn-default-bgcolor, $btn-default-border, true);
+                line-height: 16px;
+                padding: 10px 20px !important;
+                &:before {
+                    margin-top: -3px;
+                }
             }
         }
+    }
+    .inline-group .add-row,
+    .inline-group .add-row td,
+    .inline-group .module .add-row td {
+        border-bottom: none !important;
+    }
+    .module h2,
+    .module caption,
+    .inline-group h2,
+    .inline-group .module h2 {
+        font-size: $font-size-normal-middle !important;
+        line-height: initial;
     }
 }
 
@@ -615,6 +679,20 @@ body.dashboard {
                 }
             }
         }
+    }
+}
+
+
+//##############################################################################
+// DIALOG
+
+.cms-dialog {
+    background-color: $skin-color !important;
+    box-shadow: 0 0 40px rgba(255,255,255, .5) !important;
+    border: none !important;
+    border-radius: 3px !important;
+    form {
+        border: none !important;
     }
 }
 
@@ -770,6 +848,18 @@ body.dashboard {
         }
     }
 }
+.filer-dropzone-info-message {
+    @include overlay-shadow;
+
+    background-color: $skin-color;
+
+    .icon {
+        color: $color-primary;
+    }
+    .text {
+        color: $gray-light;
+    }
+}
 .filer-dropzone-upload-welcome .folder {
     border-top: 1px dashed lighten($skin-color, 5%);
 
@@ -860,7 +950,8 @@ body.dashboard {
 //##############################################################################
 // FORMS
 
-form {
+form,
+.popover-content {
     background: none;
     box-shadow: none;
 
@@ -879,6 +970,12 @@ form {
         &:focus {
             box-shadow: 0 0 2px $color-primary !important;
             border: 1px solid $color-primary !important;
+        }
+    }
+    table td {
+        select {
+            background-image: none !important;
+            border-color: $skin-color !important;
         }
     }
     fieldset {
@@ -908,7 +1005,17 @@ form {
         }
         &.btn-default,
         &.btn-link {
+            @include button-variant-inverse($btn-default-color, $btn-default-bgcolor, $btn-default-border, true);
             color: $btn-default-color !important;
+            border-radius: 0 !important;
+        }
+        &.btn-default:first-child {
+            border-bottom-left-radius: $border-radius-base !important;
+            border-top-left-radius: $border-radius-base !important;
+        }
+        &.btn-default:last-child {
+            border-bottom-right-radius: $border-radius-base !important;
+            border-top-right-radius: $border-radius-base !important;
         }
     }
     .checkbox-row {
@@ -921,12 +1028,17 @@ form {
     .form-row {
         &.field-attributes {
             .djangocms-attributes-field {
+                .field-box label {
+                    //text-align: left;
+                    padding-right: 5px !important;
+                }
                 .attributes-pair .attributes-value {
                     width: 60% !important;
                 }
                 .delete-attributes-pair,
                 .add-attributes-pair {
                     @include button-variant-inverse($btn-default-color, $btn-default-bgcolor, $btn-default-border, true);
+                    padding: 9px !important;
                 }
             }
         }
@@ -955,7 +1067,8 @@ form {
                 margin-left: 6px;
             }
         }
-        .filer-dropzone {
+        .filer-dropzone,
+        .filer-dropzone.filer-dropzone-mobile {
             background-color: lighten($skin-color, 5%) !important;
             border: 1px solid lighten($skin-color, 10%) !important;
 
@@ -966,14 +1079,18 @@ form {
                     border: 1px solid $color-input;
                 }
                 * {
-                    color: $gray-light;
+                    color: $gray-light !important;
                 }
+                img.filerClearer,
                 .filerClearer,
                 .related-lookup.related-lookup-change {
-                    @include button-variant-inverse($btn-default-color, $btn-default-bgcolor, $btn-default-border, true);
+                    @include button-variant-inverse(lighten($btn-default-color, 5%), lighten($btn-default-bgcolor, 5%), lighten($btn-default-border, 5%), true);
+                    padding: 10px !important;
                 }
+                .js-related-lookup.related-lookup.lookup,
                 .related-lookup {
                     @include button-variant-inverse($btn-action-color, $btn-action-bgcolor, $btn-action-border, true);
+                    padding: 6px !important;
                 }
             }
             .icon {
@@ -1082,6 +1199,9 @@ span.datetimeshortcuts,
         height: 14px;
         line-height: 14px;
         padding: 10px !important;
+        &:first-child {
+            width: auto;
+        }
     }
 }
 
@@ -1154,11 +1274,12 @@ div.calendarbox {
             }
             &.selected a {
                 background-color: $color-primary !important;
-                color: $gray-lighter !important;
+                color: $gray-lighter;
             }
             &.today a {
-                background-color: $color-primary !important;
-                color: $gray-lighter !important;
+                background-color:  desaturate(darken($color-secondary, 30%), 25%) !important;
+                border: 1px solid $color-secondary;
+                color: $gray-lighter;
             }
             a {
                 &:hover {
@@ -1217,8 +1338,10 @@ a[id*="clocklink"],
 .cms-admin-modal.delete-confirmation .colM > p,
 .delete-confirmation .colM h1 + p,
 .admin_shortcuts .shortcuts li a {
+    padding: 0;
     &:before {
         font-size: $font-size-normal-middle;
+        margin-right: 0;
     }
 }
 
@@ -1253,8 +1376,8 @@ body.djangocms-admin-style.login {
             }
             #branding {
                 #header-logo {
-                    height: 80px;
-                    margin-top: -100px;
+                    height: 100px;
+                    margin-top: -125px;
 
                     h1 {
                         @include branding-logo;
@@ -1514,12 +1637,15 @@ body.djangocms-admin-style.login {
 .cms-pagetree-wrapper .cms-pagetree .cms-pagetree-dropdown.cms-pagetree-dropdown-menu-open .cms-btn {
     @include button-variant-inverse($btn-default-color, $btn-default-bgcolor, $btn-default-border, true);
 }
-.cms-pagetree-header-lang {
-    color: $gray-light !important;
-    font-weight: 700 !important;
+.jstree-grid-header.jstree-grid-header-cell.jstree-grid-header-regular a.js-pagetree-header-lang.cms-pagetree-header-lang:link,
+a.js-pagetree-header-lang.cms-pagetree-header-lang:link,
+a.cms-pagetree-header-lang:link {
+    color: darken($gray-light, 5%) !important;
+    font-weight: 400 !important;
+    text-decoration: underline !important;
 
     &:hover {
-        color: $gray-light !important;
+        color: lighten($gray-light, 5%) !important;
         text-decoration: underline !important;
     }
 }
@@ -1530,7 +1656,7 @@ body.djangocms-admin-style.login {
 .jstree-django-cms .jstree-grid-header {
     background-color: darken($skin-color, 5%) !important;
     border-bottom: 1px solid darken($skin-color, 5%) !important;
-    color: $gray-light;
+    color: $gray-light !important;
 }
 .jstree-django-cms .jstree-container-ul {
     background-color: darken($skin-color, 5%) !important;
@@ -1597,6 +1723,7 @@ body.djangocms-admin-style.login {
         th {
             background-color: lighten($skin-color, 5%) !important;
             border-bottom: 1px solid lighten($skin-color, 5%);
+            color: $gray-light !important;
         }
         a,
         span {
@@ -1699,4 +1826,7 @@ body.djangocms-admin-style.login {
     color: $gray-light !important;
     font-size: 12px !important;
     font-weoght: 200 !important;
+}
+.tabular table td.delete a.inline-deletelink {
+    @include button-variant-inverse($btn-default-color, $btn-default-bgcolor, $btn-default-border, true);
 }
