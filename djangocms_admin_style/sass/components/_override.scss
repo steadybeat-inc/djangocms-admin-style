@@ -794,7 +794,7 @@ body.dashboard {
                 font-size: $font-size-normal-middle;
             }
         }
-        .column-icon img {
+        .column-icon img[src^="/media/"] {
             border: 1px solid $color-input;
             border-radius: 2px;
         }
@@ -1012,6 +1012,17 @@ form,
             background-image: none !important;
             border-color: $skin-color !important;
         }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="number"],
+        input[type="url"],
+        select,
+        select[multiple],
+        textarea {
+            background-image: none !important;
+            border-color: $skin-color !important;
+        }
     }
     fieldset {
         &.collapse h2 {
@@ -1140,6 +1151,14 @@ form,
             padding: 8px !important;
         }
     }
+    .related-widget-wrapper .selector {
+        margin-top: 20px;
+    }
+}
+@media screen and (max-width: 810px) {
+    form .form-row .filer-dropzone .dz-message {
+        margin-top: 75px !important;
+    }
 }
 form .errors,
 form .form-row:not(tr).errors,
@@ -1170,6 +1189,11 @@ input[type="button"] {
     color: $gray;
     padding: 10px 5px;
 }
+.field-type p {
+    background-color: transparent !important;
+    color: $gray !important;
+}
+
 .selector .selector-available,
 .selector .selector-chosen {
     background-color: lighten($skin-color, 5%);
