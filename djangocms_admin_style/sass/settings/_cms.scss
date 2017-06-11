@@ -130,15 +130,15 @@ $btn-default-color: $gray-light;
 $btn-default-bgcolor: lighten($skin-color, 5%);
 $btn-default-border: lighten($skin-color, 10%);
 
-$btn-action-color: $gray-lighter;
+$btn-action-color: $gray-lightest;
 $btn-action-bgcolor: $color-primary;
 $btn-action-border: lighten($color-primary, 5%);
 
-$btn-caution-color: $gray-lighter;
+$btn-caution-color: $gray-lightest;
 $btn-caution-bgcolor: adjust-hue($color-danger, 15deg);
 $btn-caution-border: adjust-hue($color-danger, 15deg);
 
-$btn-active-color: $gray-lighter;
+$btn-active-color: $gray-lightest;
 $btn-active-bgcolor: $skin-color;
 $btn-active-border: $color-secondary;
 

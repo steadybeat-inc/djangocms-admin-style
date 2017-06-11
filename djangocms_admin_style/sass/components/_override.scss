@@ -167,6 +167,7 @@
 //##############################################################################
 // GLOBAL
 
+.cms-admin-sideframe ul.messagelist,
 ul.messagelist {
     margin-top: 53px !important;
     li {
@@ -197,6 +198,7 @@ a,
 a:active,
 a:focus,
 a:hover,
+b,
 div,
 fieldset,
 form,
@@ -209,13 +211,14 @@ label,
 li,
 p,
 .form-row p,
+strong,
 textarea,
 ul {
     color: $gray-light;
     font-family: $base-font-family;
     font-size: $font-size-normal;
     font-weight: 200;
-    letter-spacing: .08rem;
+    letter-spacing: .06rem;
 }
 a {
     cursor: pointer;
@@ -559,7 +562,7 @@ body {
     }
     h2 {
         color: $gray-light;
-        font-size: $font-size-normal-large !important;
+        font-size: $font-size-normal-large;
         border-bottom: none;
     }
 }
@@ -632,11 +635,30 @@ body {
     .inline-group .module .add-row td {
         border-bottom: none !important;
     }
+    .inline-group.ui-sortable {
+        .inline-related {
+            padding: 0;
+        }
+    }
     .inline-related {
+        background-color: lighten($skin-color, 5%);
+        border-radius: $border-radius-base;
+        overflow-x: scroll;
+        padding: 10px;
+
         h3 {
             background-color: lighten($skin-color, 5%);
             border: none !important;
             border-radius: $border-radius-base;
+
+            &.ui-sortable-handle {
+                background-color: lighten($skin-color, 10%);
+                border-radius: 0 $border-radius-base $border-radius-base 0;
+                border-left: 1px solid $color-secondary !important;
+                margin: 10px 10px 10px 0;
+                padding: 5px;
+            }
+
             .inline_label {
                 color: $gray-light;
             }
@@ -644,15 +666,20 @@ body {
                 font-size: 12px !important;
             }
         }
+        .vCheckboxLabel.inline {
+            padding: 0;
+        }
     }
     .module h2,
     .module caption,
     .inline-group h2,
     .inline-group .module h2 {
-        font-size: $font-size-normal-middle !important;
+        color: $gray-light;
+        font-size: $font-size-normal-large;
         line-height: initial;
     }
 }
+
 
 
 //##############################################################################
@@ -917,6 +944,7 @@ body.dashboard {
         background-color: lighten($skin-color, 5%);
         border: 1px solid lighten($skin-color, 10%);
         border-radius: 3px;
+        padding: 20px;
 
         .image-details {
             dt {
@@ -1075,8 +1103,9 @@ form,
         &.field-attributes {
             .djangocms-attributes-field {
                 .field-box label {
-                    //text-align: left;
+                    display: block;
                     padding-right: 5px !important;
+                    text-align: left;
                 }
                 .attributes-pair .attributes-value {
                     width: 60% !important;
@@ -1151,8 +1180,34 @@ form,
             padding: 8px !important;
         }
     }
-    .related-widget-wrapper .selector {
-        margin-top: 20px;
+    .related-widget-wrapper {
+        float: none;
+        select {
+            float: none;
+        }
+        .selector {
+            margin-top: 20px;
+        }
+        &.widget-wrapper-links-1 {
+            position: relative;
+            select {
+                width: calc(100% - 66px) !important;
+            }
+            .add-related {
+                position: absolute;
+                top: 0;
+            }
+        }
+        &.widget-wrapper-links-2 select {
+            width: calc(100% - 112px) !important;
+        }
+        &.widget-wrapper-links-3 select {
+            width: calc(100% - 158px) !important;
+        }
+    }
+    .aligned p.help {
+        font-size: 10px !important;
+        margin-top: 5px !important;
     }
 }
 @media screen and (max-width: 810px) {
@@ -1239,6 +1294,7 @@ form .select2-dropdown-open.select2-drop-above .select2-choices,
 .select2-results {
     .select2-result-selectable {
         color: $gray-light !important;
+        border: 1px solid transparent;
 
         * {
             font-size: 12px !important;
@@ -1246,6 +1302,7 @@ form .select2-dropdown-open.select2-drop-above .select2-choices,
     }
     .select2-highlighted {
         @include button-variant-inverse($btn-action-color, $btn-action-bgcolor, $btn-action-border, true);
+        padding: 0 !important;
 
         * {
             font-size: 12px !important;
@@ -1797,18 +1854,21 @@ a.cms-pagetree-header-lang:link {
         }
     }
     tbody tr {
-        td,
-        th {
-            border-bottom: 1px dotted $skin-color;
-            color: $gray-light !important;
-            font-weight: 200;
-        }
         &.selected {
             color: $gray-lighter;
             background: url("../img/bg-pattern-carbon.png") rgba(darken($color-primary, 10%), .5) !important;
         }
         &:hover {
             background: url("../img/bg-pattern-carbon.png") $skin-color !important;
+        }
+        td,
+        th {
+            border-bottom: 1px dotted $skin-color;
+            color: $gray-light !important;
+            font-weight: 200;
+        }
+        td.field-app_config {
+            padding: 10px !important;
         }
     }
     .row1 {
