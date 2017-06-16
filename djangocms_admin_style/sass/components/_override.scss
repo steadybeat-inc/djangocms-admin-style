@@ -673,9 +673,10 @@ body {
     .module h2,
     .module caption,
     .inline-group h2,
-    .inline-group .module h2 {
+    .inline-group .module h2,
+    .form-row .selector-available h2 {
         color: $gray-light;
-        font-size: $font-size-normal-large;
+        font-size: $font-size-normal-large !important;
         line-height: initial;
     }
 }
@@ -1186,7 +1187,7 @@ form,
             float: none;
         }
         .selector {
-            margin-top: 20px;
+            margin-top: 45px;
         }
         &.widget-wrapper-links-1 {
             position: relative;
@@ -1867,7 +1868,8 @@ a.cms-pagetree-header-lang:link {
             color: $gray-light !important;
             font-weight: 200;
         }
-        td.field-app_config {
+        td.field-app_config,
+        td.field-app_config.nowrap{
             padding: 10px !important;
         }
     }

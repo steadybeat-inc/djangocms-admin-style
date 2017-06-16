@@ -7113,9 +7113,10 @@ body #container .breadcrumbs {
 .djangocms-admin-style .module h2,
 .djangocms-admin-style .module caption,
 .djangocms-admin-style .inline-group h2,
-.djangocms-admin-style .inline-group .module h2 {
+.djangocms-admin-style .inline-group .module h2,
+.djangocms-admin-style .form-row .selector-available h2 {
   color: #bfbfbf;
-  font-size: 16px;
+  font-size: 16px !important;
   line-height: initial; }
 
 body.dashboard {
@@ -8759,7 +8760,7 @@ form,
       float: none; }
     form .related-widget-wrapper .selector,
     .popover-content .related-widget-wrapper .selector {
-      margin-top: 20px; }
+      margin-top: 45px; }
     form .related-widget-wrapper.widget-wrapper-links-1,
     .popover-content .related-widget-wrapper.widget-wrapper-links-1 {
       position: relative; }
@@ -9819,10 +9820,15 @@ a.cms-pagetree-header-lang:link {
     color: #bfbfbf !important;
     font-weight: 200; }
   .dashboard table tbody tr td.field-app_config,
+  .dashboard table tbody tr td.field-app_config.nowrap,
   .change-list table tbody tr td.field-app_config,
+  .change-list table tbody tr td.field-app_config.nowrap,
   .tabular table tbody tr td.field-app_config,
+  .tabular table tbody tr td.field-app_config.nowrap,
   .results table tbody tr td.field-app_config,
-  #change-history tbody tr td.field-app_config {
+  .results table tbody tr td.field-app_config.nowrap,
+  #change-history tbody tr td.field-app_config,
+  #change-history tbody tr td.field-app_config.nowrap {
     padding: 10px !important; }
   .dashboard table .row1,
   .change-list table .row1,
