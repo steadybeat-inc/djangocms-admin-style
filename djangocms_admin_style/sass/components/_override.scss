@@ -680,7 +680,22 @@ body {
         line-height: initial;
     }
 }
-
+#taggit_taggeditem_items-group {
+    h3 {
+        margin-top: 10px;
+    }
+    .module {
+        padding: 0;
+        border-top: none !important;
+        border-bottom: none !important;
+        .form-row {
+            padding: 0 2px 10px
+        }
+    }
+}
+.inline-group .inline-related {
+    margin-bottom: 10px;
+}
 
 
 //##############################################################################
@@ -1183,12 +1198,6 @@ form,
     }
     .related-widget-wrapper {
         float: none;
-        select {
-            float: none;
-        }
-        .selector {
-            margin-top: 45px;
-        }
         &.widget-wrapper-links-1 {
             position: relative;
             select {
@@ -1204,6 +1213,15 @@ form,
         }
         &.widget-wrapper-links-3 select {
             width: calc(100% - 158px) !important;
+        }
+        select {
+            float: none;
+        }
+        .selector {
+            margin-top: 45px;
+        }
+        .sortedm2m-container .sortedm2m label {
+            color: $color-secondary !important;
         }
     }
     .aligned p.help {
@@ -1951,6 +1969,18 @@ a.cms-pagetree-header-lang:link {
     font-size: 12px !important;
     font-weoght: 200 !important;
 }
-.tabular table td.delete a.inline-deletelink {
-    @include button-variant-inverse($btn-default-color, $btn-default-bgcolor, $btn-default-border, true);
+.tabular table {
+    td.delete a.inline-deletelink {
+        @include button-variant-inverse($btn-default-color, $btn-default-bgcolor, $btn-default-border, true);
+    }
+    td.original p {
+        color: $color-secondary !important;
+        padding: 0 32px !important;
+    }
+    thead th {
+        background-color: $skin-color !important;
+    }
+    tbody td {
+        padding-top: 38px !important;
+    }
 }
