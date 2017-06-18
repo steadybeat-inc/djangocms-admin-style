@@ -5998,6 +5998,9 @@ body:not(.cms-admin-sideframe) #header {
 .aldryn-bootstrap3 .btn-group .btn.btn-link {
   padding: 6px 20px !important; }
 
+.app-aldryn_categories.change-list .object-tools .addlink {
+  display: none; }
+
 body {
   background-color: #303639;
   color: #bfbfbf; }
