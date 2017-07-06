@@ -1747,6 +1747,11 @@ body.djangocms-admin-style.login {
     border-color: $gray !important;
     color: $gray !important;
 }
+
+.cms-icon:hover {
+    font: normal normal normal 16px/1 django-cms-iconfont;
+}
+
 .cms-icon-info {
     color: $color-primary !important;
     font-size: 12px;

@@ -9637,6 +9637,9 @@ body.djangocms-admin-style.login {
   border-color: #666666 !important;
   color: #666666 !important; }
 
+.cms-icon:hover {
+  font: normal normal normal 16px/1 django-cms-iconfont; }
+
 .cms-icon-info {
   color: #5887ab !important;
   font-size: 12px; }
