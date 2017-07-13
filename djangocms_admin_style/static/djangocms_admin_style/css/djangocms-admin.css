@@ -6187,6 +6187,9 @@ span.datetimeshortcuts a .btn-group,
     .cms-btn-group[disabled]:active:before {
       color: rgba(191, 191, 191, 0.4) true; }
 
+.cms-btn-group:hover {
+  font-weight: normal; }
+
 .add-another:before,
 .add-related:before,
 .change-related:before,

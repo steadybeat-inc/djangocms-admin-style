@@ -332,6 +332,9 @@ span.datetimeshortcuts a
     @include button-variant-inverse($btn-default-color, $btn-default-bgcolor, $btn-default-border, true);
     padding: 10px !important;
 }
+.cms-btn-group:hover {
+    font-weight: normal;
+}
 .add-another:before,
 .add-related:before,
 .change-related:before,
