@@ -7116,8 +7116,7 @@ body #container .breadcrumbs {
 .djangocms-admin-style .module h2,
 .djangocms-admin-style .module caption,
 .djangocms-admin-style .inline-group h2,
-.djangocms-admin-style .inline-group .module h2,
-.djangocms-admin-style .form-row .selector-available h2 {
+.djangocms-admin-style .inline-group .module h2 {
   color: #bfbfbf;
   font-size: 16px !important;
   line-height: initial; }
@@ -8942,13 +8941,15 @@ input[type="button"] {
   border: 1px solid #475055; }
   .selector .selector-available h2,
   .selector .selector-chosen h2 {
-    color: #bfbfbf !important; }
+    color: #bfbfbf !important;
+    font-size: 14px !important; }
   .selector .selector-available select[multiple],
   .selector .selector-chosen select[multiple] {
     box-shadow: 0 1px 0 #475055 !important;
     background: url("../img/bg-pattern-carbon.png") #24292b !important;
     border-color: #24292b !important;
-    color: #e9f8ff !important; }
+    color: #e9f8ff !important;
+    width: 100% !important; }
     .selector .selector-available select[multiple]:focus,
     .selector .selector-chosen select[multiple]:focus {
       box-shadow: 0 0 2px #5887ab !important;
