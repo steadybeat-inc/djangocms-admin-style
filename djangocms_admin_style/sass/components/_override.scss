@@ -646,6 +646,7 @@ body {
     .inline-related {
         background-color: lighten($skin-color, 5%);
         border-radius: $border-radius-base;
+        border: 1px dashed #acacac;
         overflow-x: scroll;
         padding: 10px;
 

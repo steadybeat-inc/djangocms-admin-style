@@ -7094,6 +7094,7 @@ body #container .breadcrumbs {
 .djangocms-admin-style .inline-related {
   background-color: #3c4347;
   border-radius: 3px;
+  border: 1px dashed #acacac;
   overflow-x: scroll;
   padding: 10px; }
   .djangocms-admin-style .inline-related h3 {
