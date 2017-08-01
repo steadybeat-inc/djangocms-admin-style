@@ -7003,25 +7003,40 @@ body #container .breadcrumbs {
   border-bottom: 1px solid #d1675a; }
   .djangocms-admin-style #page_form_lang_tabs input,
   .djangocms-admin-style #page_form_lang_tabs span,
+  .djangocms-admin-style #page_form_lang_tabs input:focus,
+  .djangocms-admin-style #page_form_lang_tabs span:focus,
   .djangocms-admin-style #page_form_lang_tabs input.notfilled,
   .djangocms-admin-style #page_form_lang_tabs span.notfilled,
   .djangocms-admin-style .parler-language-tabs input,
   .djangocms-admin-style .parler-language-tabs span,
+  .djangocms-admin-style .parler-language-tabs input:focus,
+  .djangocms-admin-style .parler-language-tabs span:focus,
   .djangocms-admin-style .parler-language-tabs input.notfilled,
   .djangocms-admin-style .parler-language-tabs span.notfilled {
+    background-color: transparent !important;
     border-bottom: 3px solid transparent !important;
     color: #666666 !important; }
     .djangocms-admin-style #page_form_lang_tabs input:hover,
     .djangocms-admin-style #page_form_lang_tabs span:hover,
+    .djangocms-admin-style #page_form_lang_tabs input:focus:hover,
+    .djangocms-admin-style #page_form_lang_tabs span:focus:hover,
     .djangocms-admin-style #page_form_lang_tabs input.notfilled:hover,
     .djangocms-admin-style #page_form_lang_tabs span.notfilled:hover,
     .djangocms-admin-style .parler-language-tabs input:hover,
     .djangocms-admin-style .parler-language-tabs span:hover,
+    .djangocms-admin-style .parler-language-tabs input:focus:hover,
+    .djangocms-admin-style .parler-language-tabs span:focus:hover,
     .djangocms-admin-style .parler-language-tabs input.notfilled:hover,
     .djangocms-admin-style .parler-language-tabs span.notfilled:hover {
       color: #bfbfbf !important;
-      border-bottom: solid 3px #bfbfbf !important;
-      background-color: transparent !important; }
+      border-bottom: solid 3px #bfbfbf !important; }
+  .djangocms-admin-style #page_form_lang_tabs input,
+  .djangocms-admin-style #page_form_lang_tabs span.selected,
+  .djangocms-admin-style .parler-language-tabs input,
+  .djangocms-admin-style .parler-language-tabs span.selected {
+    color: #d1675a !important;
+    border-bottom: solid 3px #d1675a !important;
+    background-color: transparent !important; }
   .djangocms-admin-style #page_form_lang_tabs input.selected,
   .djangocms-admin-style #page_form_lang_tabs span.selected,
   .djangocms-admin-style .parler-language-tabs input.selected,

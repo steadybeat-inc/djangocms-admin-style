@@ -603,15 +603,23 @@ body {
         border-bottom: 1px solid $color-secondary;
         input,
         span,
+        input:focus,
+        span:focus,
         input.notfilled,
         span.notfilled {
+            background-color: transparent !important;
             border-bottom: 3px solid transparent !important;
             color: $gray !important;
             &:hover {
                 color: $gray-light !important;
                 border-bottom: solid 3px $gray-light !important;
-                background-color: transparent !important;
             }
+        }
+        input,
+        span.selected {
+            color: $color-secondary !important;
+            border-bottom: solid 3px $color-secondary !important;
+            background-color: transparent !important;
         }
         input.selected,
         span.selected {
