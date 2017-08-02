@@ -7582,6 +7582,9 @@ body.dashboard {
   border-radius: 3px;
   color: #bfbfbf !important; }
 
+.app-filer.model-folder #content-related {
+  background-color: transparent !important; }
+
 form,
 .popover-content {
   background: none;
