@@ -615,7 +615,7 @@ body {
                 border-bottom: solid 3px $gray-light !important;
             }
         }
-        input,
+        input.selected,
         span.selected {
             color: $color-secondary !important;
             border-bottom: solid 3px $color-secondary !important;

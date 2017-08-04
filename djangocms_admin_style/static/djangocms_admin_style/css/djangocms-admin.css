@@ -7030,9 +7030,9 @@ body #container .breadcrumbs {
     .djangocms-admin-style .parler-language-tabs span.notfilled:hover {
       color: #bfbfbf !important;
       border-bottom: solid 3px #bfbfbf !important; }
-  .djangocms-admin-style #page_form_lang_tabs input,
+  .djangocms-admin-style #page_form_lang_tabs input.selected,
   .djangocms-admin-style #page_form_lang_tabs span.selected,
-  .djangocms-admin-style .parler-language-tabs input,
+  .djangocms-admin-style .parler-language-tabs input.selected,
   .djangocms-admin-style .parler-language-tabs span.selected {
     color: #d1675a !important;
     border-bottom: solid 3px #d1675a !important;
