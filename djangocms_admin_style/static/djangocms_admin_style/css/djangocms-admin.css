@@ -10307,3 +10307,7 @@ a.cms-pagetree-header-lang:link {
   .popup.change-list #changelist .paginator,
   .popup.change-list #changelist.filtered .paginator {
     width: calc(100% - 30px - 40px) !important; } }
+
+form .aligned .aldryn-bootstrap3 label + label {
+  margin-left: 0px;
+}
