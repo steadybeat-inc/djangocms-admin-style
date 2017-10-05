@@ -8110,6 +8110,9 @@ form,
     color: #bfbfbf !important;
     font-size: 14px !important;
     font-weight: 200; }
+  form .form-row.field-site,
+  .popover-content .form-row.field-site {
+    display: none; }
   form .form-row.field-attributes .djangocms-attributes-field .field-box label,
   .popover-content .form-row.field-attributes .djangocms-attributes-field .field-box label {
     display: block;

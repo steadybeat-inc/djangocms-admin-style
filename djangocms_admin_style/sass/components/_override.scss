@@ -1132,6 +1132,9 @@ form,
         }
     }
     .form-row {
+        &.field-site {
+            display: none;
+        }
         &.field-attributes {
             .djangocms-attributes-field {
                 .field-box label {
