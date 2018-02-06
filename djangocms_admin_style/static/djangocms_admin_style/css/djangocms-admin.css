@@ -4719,9 +4719,6 @@ a.addlink:hover, a.addlink:focus, a.addlink:active {
       color: black !important;
       border-bottom: solid 3px #fff !important;
       background-color: #fff !important; }
-  #page_form_lang_tabs input a,
-  .parler-language-tabs span a {
-    color: #333333 !important; }
 
 .parler-language-tabs span {
   padding: 0 !important; }
