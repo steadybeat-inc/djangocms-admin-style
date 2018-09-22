@@ -4695,7 +4695,8 @@ a.addlink:hover, a.addlink:focus, a.addlink:active {
   background: transparent !important;
   box-shadow: none !important; }
   #page_form_lang_tabs input:hover,
-  #page_form_lang_tabs input a:hover, #page_form_lang_tabs input:focus,
+  #page_form_lang_tabs input a:hover,
+  #page_form_lang_tabs input:focus,
   #page_form_lang_tabs input a:focus,
   .parler-language-tabs span:hover,
   .parler-language-tabs span a:hover,
@@ -4703,7 +4704,11 @@ a.addlink:hover, a.addlink:focus, a.addlink:active {
   .parler-language-tabs span a:focus {
     color: black !important;
     background-color: transparent !important; }
-  #page_form_lang_tabs input.selected, #page_form_lang_tabs input.current,
+   .parler-language-tabs span.available a {
+        color: #666666 !important;
+    }
+  #page_form_lang_tabs input.selected,
+  #page_form_lang_tabs input.current,
   .parler-language-tabs span.selected,
   .parler-language-tabs span.current {
     color: #5887ab !important;
@@ -4713,23 +4718,13 @@ a.addlink:hover, a.addlink:focus, a.addlink:active {
   .parler-language-tabs span.notfilled {
     color: #666666 !important;
     background: transparent !important; }
-    #page_form_lang_tabs input.notfilled:hover, #page_form_lang_tabs input.notfilled:focus,
+    #page_form_lang_tabs input.notfilled:hover,
+    #page_form_lang_tabs input.notfilled:focus,
     .parler-language-tabs span.notfilled:hover,
     .parler-language-tabs span.notfilled:focus {
       color: black !important;
       border-bottom: solid 3px #fff !important;
       background-color: #fff !important; }
-  #page_form_lang_tabs input a,
-  .parler-language-tabs span a {
-    color: #333333 !important; }
-
-.parler-language-tabs span {
-  padding: 0 !important; }
-
-.parler-language-tabs .current,
-.parler-language-tabs a {
-  display: inline-block;
-  padding: 10px 20px !important; }
 
 #lang_tab_content h2.header {
   position: relative;
@@ -7033,6 +7028,7 @@ body #container .breadcrumbs {
   .djangocms-admin-style #page_form_lang_tabs input.selected,
   .djangocms-admin-style #page_form_lang_tabs span.selected,
   .djangocms-admin-style .parler-language-tabs input.selected,
+  .djangocms-admin-style .parler-language-tabs span.current,
   .djangocms-admin-style .parler-language-tabs span.selected {
     color: #d1675a !important;
     border-bottom: solid 3px #d1675a !important;
