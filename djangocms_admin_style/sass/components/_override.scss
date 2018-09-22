@@ -1131,11 +1131,17 @@ form,
             font-weight: 200;
         }
     }
-    .form-row {
-        &.field-site {
+    .form-row,
+    .results {
+        .field-price,
+        .field-unit_price,
+        .field-total_price {
+            text-align: right;
+        }
+        .field-site {
             display: none;
         }
-        &.field-attributes {
+        .field-attributes {
             .djangocms-attributes-field {
                 .field-box label {
                     display: block;
@@ -1152,9 +1158,9 @@ form,
                 }
             }
         }
-        &.field-file,
-        &.field-sha1,
-        &.field-display_canonical {
+        .field-file,
+        .field-sha1,
+        .field-display_canonical {
             div > label {
                 display: block;
             }
