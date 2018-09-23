@@ -4695,8 +4695,7 @@ a.addlink:hover, a.addlink:focus, a.addlink:active {
   background: transparent !important;
   box-shadow: none !important; }
   #page_form_lang_tabs input:hover,
-  #page_form_lang_tabs input a:hover,
-  #page_form_lang_tabs input:focus,
+  #page_form_lang_tabs input a:hover, #page_form_lang_tabs input:focus,
   #page_form_lang_tabs input a:focus,
   .parler-language-tabs span:hover,
   .parler-language-tabs span a:hover,
@@ -4704,11 +4703,7 @@ a.addlink:hover, a.addlink:focus, a.addlink:active {
   .parler-language-tabs span a:focus {
     color: black !important;
     background-color: transparent !important; }
-   .parler-language-tabs span.available a {
-        color: #666666 !important;
-    }
-  #page_form_lang_tabs input.selected,
-  #page_form_lang_tabs input.current,
+  #page_form_lang_tabs input.selected, #page_form_lang_tabs input.current,
   .parler-language-tabs span.selected,
   .parler-language-tabs span.current {
     color: #5887ab !important;
@@ -4718,13 +4713,23 @@ a.addlink:hover, a.addlink:focus, a.addlink:active {
   .parler-language-tabs span.notfilled {
     color: #666666 !important;
     background: transparent !important; }
-    #page_form_lang_tabs input.notfilled:hover,
-    #page_form_lang_tabs input.notfilled:focus,
+    #page_form_lang_tabs input.notfilled:hover, #page_form_lang_tabs input.notfilled:focus,
     .parler-language-tabs span.notfilled:hover,
     .parler-language-tabs span.notfilled:focus {
       color: black !important;
       border-bottom: solid 3px #fff !important;
       background-color: #fff !important; }
+  #page_form_lang_tabs input a,
+  .parler-language-tabs span a {
+    color: #333333 !important; }
+
+.parler-language-tabs span {
+  padding: 0 !important; }
+
+.parler-language-tabs .current,
+.parler-language-tabs a {
+  display: inline-block;
+  padding: 10px 20px !important; }
 
 #lang_tab_content h2.header {
   position: relative;
@@ -6613,13 +6618,131 @@ body.dashboard #container .breadcrumbs {
     font-weight: 200;
     margin: 0 !important;
     padding: 15px 0 5px 0 !important; }
-  .change-list #changelist #changelist-filter ul {
+  .change-list #changelist #changelist-filter ul,
+  .change-list #changelist #changelist-filter .admindatefilter {
     border-bottom: solid 1px #24292b;
     border-top: solid 1px #3c4347;
     margin: 0 !important;
     padding: 5px 0 5px 10px; }
-    .change-list #changelist #changelist-filter ul:last-child {
+    .change-list #changelist #changelist-filter ul:last-child,
+    .change-list #changelist #changelist-filter .admindatefilter:last-child {
       border-bottom: none !important; }
+    .change-list #changelist #changelist-filter ul .datetimeshortcuts a:first-child,
+    .change-list #changelist #changelist-filter .admindatefilter .datetimeshortcuts a:first-child {
+      left: 3.5rem;
+      position: absolute;
+      top: 0;
+      width: 2.5rem; }
+    .change-list #changelist #changelist-filter ul .datetimeshortcuts a:last-child,
+    .change-list #changelist #changelist-filter .admindatefilter .datetimeshortcuts a:last-child {
+      left: .5rem;
+      position: absolute;
+      top: 0; }
+    .change-list #changelist #changelist-filter ul input[type='submit'],
+    .change-list #changelist #changelist-filter ul .button,
+    .change-list #changelist #changelist-filter .admindatefilter input[type='submit'],
+    .change-list #changelist #changelist-filter .admindatefilter .button {
+      background-image: none !important;
+      margin-bottom: 0;
+      padding: 6px 20px !important;
+      border-radius: 3px !important;
+      color: #bfbfbf !important;
+      font-size: 12px !important;
+      line-height: 12px;
+      font-weight: normal;
+      text-transform: none !important;
+      letter-spacing: normal !important;
+      background-color: #3c4347 !important;
+      border: 1px solid #475055 !important;
+      background-clip: padding-box;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      margin: 0;
+      vertical-align: top; }
+      .change-list #changelist #changelist-filter ul input[type='submit']:focus,
+      .change-list #changelist #changelist-filter ul .button:focus,
+      .change-list #changelist #changelist-filter .admindatefilter input[type='submit']:focus,
+      .change-list #changelist #changelist-filter .admindatefilter .button:focus {
+        color: #bfbfbf !important;
+        background-color: #24292b !important;
+        border-color: #6993b4 !important;
+        text-decoration: none !important; }
+      .change-list #changelist #changelist-filter ul input[type='submit']:hover,
+      .change-list #changelist #changelist-filter ul .button:hover,
+      .change-list #changelist #changelist-filter .admindatefilter input[type='submit']:hover,
+      .change-list #changelist #changelist-filter .admindatefilter .button:hover {
+        color: #bfbfbf !important;
+        background-color: #475055 !important;
+        border-color: #535d63 !important;
+        text-decoration: none !important; }
+      .change-list #changelist #changelist-filter ul input[type='submit'].active, .change-list #changelist #changelist-filter ul input[type='submit']:active,
+      .change-list #changelist #changelist-filter ul .button.active,
+      .change-list #changelist #changelist-filter ul .button:active,
+      .change-list #changelist #changelist-filter .admindatefilter input[type='submit'].active,
+      .change-list #changelist #changelist-filter .admindatefilter input[type='submit']:active,
+      .change-list #changelist #changelist-filter .admindatefilter .button.active,
+      .change-list #changelist #changelist-filter .admindatefilter .button:active {
+        color: #bfbfbf !important;
+        background-color: #24292b !important;
+        border-color: #d1675a !important;
+        box-shadow: none !important; }
+        .change-list #changelist #changelist-filter ul input[type='submit'].active:hover, .change-list #changelist #changelist-filter ul input[type='submit'].active:focus, .change-list #changelist #changelist-filter ul input[type='submit']:active:hover, .change-list #changelist #changelist-filter ul input[type='submit']:active:focus,
+        .change-list #changelist #changelist-filter ul .button.active:hover,
+        .change-list #changelist #changelist-filter ul .button.active:focus,
+        .change-list #changelist #changelist-filter ul .button:active:hover,
+        .change-list #changelist #changelist-filter ul .button:active:focus,
+        .change-list #changelist #changelist-filter .admindatefilter input[type='submit'].active:hover,
+        .change-list #changelist #changelist-filter .admindatefilter input[type='submit'].active:focus,
+        .change-list #changelist #changelist-filter .admindatefilter input[type='submit']:active:hover,
+        .change-list #changelist #changelist-filter .admindatefilter input[type='submit']:active:focus,
+        .change-list #changelist #changelist-filter .admindatefilter .button.active:hover,
+        .change-list #changelist #changelist-filter .admindatefilter .button.active:focus,
+        .change-list #changelist #changelist-filter .admindatefilter .button:active:hover,
+        .change-list #changelist #changelist-filter .admindatefilter .button:active:focus {
+          color: #bfbfbf !important;
+          background-color: #303639 !important;
+          border-color: #d7796e !important; }
+      .change-list #changelist #changelist-filter ul input[type='submit'].active, .change-list #changelist #changelist-filter ul input[type='submit']:active,
+      .change-list #changelist #changelist-filter ul .button.active,
+      .change-list #changelist #changelist-filter ul .button:active,
+      .change-list #changelist #changelist-filter .admindatefilter input[type='submit'].active,
+      .change-list #changelist #changelist-filter .admindatefilter input[type='submit']:active,
+      .change-list #changelist #changelist-filter .admindatefilter .button.active,
+      .change-list #changelist #changelist-filter .admindatefilter .button:active {
+        background-image: none !important; }
+      .change-list #changelist #changelist-filter ul input[type='submit'][disabled], .change-list #changelist #changelist-filter ul input[type='submit'][disabled]:hover, .change-list #changelist #changelist-filter ul input[type='submit'][disabled]:focus, .change-list #changelist #changelist-filter ul input[type='submit'][disabled]:active,
+      .change-list #changelist #changelist-filter ul .button[disabled],
+      .change-list #changelist #changelist-filter ul .button[disabled]:hover,
+      .change-list #changelist #changelist-filter ul .button[disabled]:focus,
+      .change-list #changelist #changelist-filter ul .button[disabled]:active,
+      .change-list #changelist #changelist-filter .admindatefilter input[type='submit'][disabled],
+      .change-list #changelist #changelist-filter .admindatefilter input[type='submit'][disabled]:hover,
+      .change-list #changelist #changelist-filter .admindatefilter input[type='submit'][disabled]:focus,
+      .change-list #changelist #changelist-filter .admindatefilter input[type='submit'][disabled]:active,
+      .change-list #changelist #changelist-filter .admindatefilter .button[disabled],
+      .change-list #changelist #changelist-filter .admindatefilter .button[disabled]:hover,
+      .change-list #changelist #changelist-filter .admindatefilter .button[disabled]:focus,
+      .change-list #changelist #changelist-filter .admindatefilter .button[disabled]:active {
+        background-color: rgba(60, 67, 71, 0.4) !important;
+        border-color: rgba(71, 80, 85, 0.4) !important;
+        color: rgba(191, 191, 191, 0.4) true;
+        cursor: not-allowed;
+        box-shadow: none !important; }
+        .change-list #changelist #changelist-filter ul input[type='submit'][disabled]:before, .change-list #changelist #changelist-filter ul input[type='submit'][disabled]:hover:before, .change-list #changelist #changelist-filter ul input[type='submit'][disabled]:focus:before, .change-list #changelist #changelist-filter ul input[type='submit'][disabled]:active:before,
+        .change-list #changelist #changelist-filter ul .button[disabled]:before,
+        .change-list #changelist #changelist-filter ul .button[disabled]:hover:before,
+        .change-list #changelist #changelist-filter ul .button[disabled]:focus:before,
+        .change-list #changelist #changelist-filter ul .button[disabled]:active:before,
+        .change-list #changelist #changelist-filter .admindatefilter input[type='submit'][disabled]:before,
+        .change-list #changelist #changelist-filter .admindatefilter input[type='submit'][disabled]:hover:before,
+        .change-list #changelist #changelist-filter .admindatefilter input[type='submit'][disabled]:focus:before,
+        .change-list #changelist #changelist-filter .admindatefilter input[type='submit'][disabled]:active:before,
+        .change-list #changelist #changelist-filter .admindatefilter .button[disabled]:before,
+        .change-list #changelist #changelist-filter .admindatefilter .button[disabled]:hover:before,
+        .change-list #changelist #changelist-filter .admindatefilter .button[disabled]:focus:before,
+        .change-list #changelist #changelist-filter .admindatefilter .button[disabled]:active:before {
+          color: rgba(191, 191, 191, 0.4) true; }
   .change-list #changelist #changelist-filter li {
     font-size: 12px;
     margin: 0;
@@ -7028,7 +7151,6 @@ body #container .breadcrumbs {
   .djangocms-admin-style #page_form_lang_tabs input.selected,
   .djangocms-admin-style #page_form_lang_tabs span.selected,
   .djangocms-admin-style .parler-language-tabs input.selected,
-  .djangocms-admin-style .parler-language-tabs span.current,
   .djangocms-admin-style .parler-language-tabs span.selected {
     color: #d1675a !important;
     border-bottom: solid 3px #d1675a !important;
@@ -8106,18 +8228,38 @@ form,
     color: #bfbfbf !important;
     font-size: 14px !important;
     font-weight: 200; }
+  form .form-row .field-quantity,
   form .form-row .field-price,
+  form .form-row .field-get_total,
   form .form-row .field-unit_price,
   form .form-row .field-total_price,
+  form .form-row .field-line_total,
+  form .form-row .field-get_amount,
+  form .form-row .field-transaction_id,
+  form .results .field-quantity,
   form .results .field-price,
+  form .results .field-get_total,
   form .results .field-unit_price,
   form .results .field-total_price,
+  form .results .field-line_total,
+  form .results .field-get_amount,
+  form .results .field-transaction_id,
+  .popover-content .form-row .field-quantity,
   .popover-content .form-row .field-price,
+  .popover-content .form-row .field-get_total,
   .popover-content .form-row .field-unit_price,
   .popover-content .form-row .field-total_price,
+  .popover-content .form-row .field-line_total,
+  .popover-content .form-row .field-get_amount,
+  .popover-content .form-row .field-transaction_id,
+  .popover-content .results .field-quantity,
   .popover-content .results .field-price,
+  .popover-content .results .field-get_total,
   .popover-content .results .field-unit_price,
-  .popover-content .results .field-total_price {
+  .popover-content .results .field-total_price,
+  .popover-content .results .field-line_total,
+  .popover-content .results .field-get_amount,
+  .popover-content .results .field-transaction_id {
     text-align: right; }
   form .form-row .field-site,
   form .results .field-site,
@@ -9370,6 +9512,9 @@ form,
       .popover-content .results .related-lookup[disabled]:focus:before,
       .popover-content .results .related-lookup[disabled]:active:before {
         color: rgba(242, 242, 242, 0.4) true; }
+  form .form-row.field-render_as_html_extra p,
+  .popover-content .form-row.field-render_as_html_extra p {
+    padding-left: 1.25rem !important; }
   form .related-widget-wrapper,
   .popover-content .related-widget-wrapper {
     float: none; }
@@ -10590,7 +10735,12 @@ a.cms-pagetree-header-lang:link {
   background-color: #303639 !important; }
 
 .tabular table tbody td {
+  border-right: 1px solid #303639 !important;
+  border-top: 1px solid #303639 !important;
   padding-top: 38px !important; }
+
+.tabular table tbody td:last-child {
+  border-right: none !important; }
 
 @media only screen and (max-width: 768px), print {
   html,

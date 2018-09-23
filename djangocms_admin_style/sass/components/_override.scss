@@ -517,13 +517,33 @@ body {
                 margin: 0 !important;
                 padding: 15px 0 5px 0!important;
             }
-            ul {
+            ul,
+            .admindatefilter {
                 border-bottom: solid 1px darken($skin-color, 5%);
                 border-top: solid 1px lighten($skin-color, 5%);
                 margin: 0 !important;
                 padding: 5px 0 5px 10px;
                 &:last-child {
                     border-bottom: none !important;
+                }
+                .datetimeshortcuts {
+                    a:first-child {
+                        left: 3.5rem;
+                        position: absolute;
+                        top: 0;
+                        width: 2.5rem;
+                    }
+                    a:last-child {
+                        left: .5rem;
+                        position: absolute;
+                        top: 0;
+                    }
+                }
+                input[type='submit'],
+                .button {
+                    @include button-variant-inverse($btn-default-color, $btn-default-bgcolor, $btn-default-border, true);
+                    margin: 0;
+                    vertical-align: top;
                 }
             }
             li {
@@ -1133,9 +1153,14 @@ form,
     }
     .form-row,
     .results {
+        .field-quantity,
         .field-price,
+        .field-get_total,
         .field-unit_price,
-        .field-total_price {
+        .field-total_price,
+        .field-line_total,
+        .field-get_amount,
+        .field-transaction_id {
             text-align: right;
         }
         .field-site {
@@ -1219,6 +1244,11 @@ form,
         .related-lookup {
             @include button-variant-inverse($btn-action-color, $btn-action-bgcolor, $btn-action-border, true);
             padding: 8px !important;
+        }
+    }
+    .form-row {
+        &.field-render_as_html_extra p {
+            padding-left: 1.25rem !important;
         }
     }
     .related-widget-wrapper {
@@ -2015,6 +2045,11 @@ a.cms-pagetree-header-lang:link {
         background-color: $skin-color !important;
     }
     tbody td {
+        border-right: 1px solid $skin-color !important;
+        border-top: 1px solid $skin-color !important;
         padding-top: 38px !important;
+    }
+    tbody td:last-child {
+        border-right: none !important;
     }
 }
