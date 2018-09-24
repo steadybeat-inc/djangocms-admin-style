@@ -9514,9 +9514,18 @@ form,
   form .inline-related .has_original.dynamic-items td.original p,
   .popover-content .inline-related .has_original.dynamic-items td.original p {
     padding-left: 2rem !important; }
+  form .inline-related .has_original.dynamic-items td.original p,
+  .popover-content .inline-related .has_original.dynamic-items td.original p {
+    padding-left: 1rem 2rem !important; }
   form .inline-related .field-unit_price,
   .popover-content .inline-related .field-unit_price {
     text-align: right; }
+  form .inline-related table tbody tr.dynamic-orderpayment_set td,
+  .popover-content .inline-related table tbody tr.dynamic-orderpayment_set td {
+    padding-top: 1rem !important; }
+  form .inline-related table tbody tr.dynamic-orderpayment_set td.original p,
+  .popover-content .inline-related table tbody tr.dynamic-orderpayment_set td.original p {
+    display: none; }
   form .related-widget-wrapper,
   .popover-content .related-widget-wrapper {
     float: none; }
@@ -9549,9 +9558,6 @@ form,
   .popover-content .aligned p.help {
     font-size: 10px !important;
     margin-top: 5px !important; }
-  form .dynamic-orderpayment_set td.original p,
-  .popover-content .dynamic-orderpayment_set td.original p {
-    display: none; }
 
 @media screen and (max-width: 810px) {
   form .form-row .filer-dropzone .dz-message {

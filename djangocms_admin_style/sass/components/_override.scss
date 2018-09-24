@@ -1252,11 +1252,24 @@ form,
         }
     }
     .inline-related {
+        .has_original.dynamic-items td {
+            &.original p {
+                padding-left: 2rem !important;
+            }
+        }
         .has_original.dynamic-items td.original p {
-            padding-left: 2rem !important;
+            padding-left: 1rem 2rem !important;
         }
         .field-unit_price {
             text-align: right;
+        }
+        table tbody tr.dynamic-orderpayment_set {
+            td {
+                padding-top: 1rem !important;
+            }
+            td.original p {
+                display: none;
+            }
         }
     }
     .related-widget-wrapper {
@@ -1291,9 +1304,6 @@ form,
     .aligned p.help {
         font-size: 10px !important;
         margin-top: 5px !important;
-    }
-    .dynamic-orderpayment_set td.original p {
-        display: none;
     }
 }
 @media screen and (max-width: 810px) {
