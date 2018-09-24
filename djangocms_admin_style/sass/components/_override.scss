@@ -1156,7 +1156,7 @@ form,
         .field-quantity,
         .field-price,
         .field-get_total,
-        .field-unit_price,
+        //.field-unit_price,
         .field-total_price,
         .field-line_total,
         .field-get_amount,
@@ -1251,6 +1251,14 @@ form,
             padding-left: 1.25rem !important;
         }
     }
+    .inline-related {
+        .has_original.dynamic-items td.original p {
+            padding-left: 2rem !important;
+        }
+        .field-unit_price {
+            text-align: right;
+        }
+    }
     .related-widget-wrapper {
         float: none;
         &.widget-wrapper-links-1 {
@@ -1283,6 +1291,9 @@ form,
     .aligned p.help {
         font-size: 10px !important;
         margin-top: 5px !important;
+    }
+    .dynamic-orderpayment_set td.original p {
+        display: none;
     }
 }
 @media screen and (max-width: 810px) {

@@ -8231,7 +8231,6 @@ form,
   form .form-row .field-quantity,
   form .form-row .field-price,
   form .form-row .field-get_total,
-  form .form-row .field-unit_price,
   form .form-row .field-total_price,
   form .form-row .field-line_total,
   form .form-row .field-get_amount,
@@ -8239,7 +8238,6 @@ form,
   form .results .field-quantity,
   form .results .field-price,
   form .results .field-get_total,
-  form .results .field-unit_price,
   form .results .field-total_price,
   form .results .field-line_total,
   form .results .field-get_amount,
@@ -8247,7 +8245,6 @@ form,
   .popover-content .form-row .field-quantity,
   .popover-content .form-row .field-price,
   .popover-content .form-row .field-get_total,
-  .popover-content .form-row .field-unit_price,
   .popover-content .form-row .field-total_price,
   .popover-content .form-row .field-line_total,
   .popover-content .form-row .field-get_amount,
@@ -8255,7 +8252,6 @@ form,
   .popover-content .results .field-quantity,
   .popover-content .results .field-price,
   .popover-content .results .field-get_total,
-  .popover-content .results .field-unit_price,
   .popover-content .results .field-total_price,
   .popover-content .results .field-line_total,
   .popover-content .results .field-get_amount,
@@ -9515,6 +9511,12 @@ form,
   form .form-row.field-render_as_html_extra p,
   .popover-content .form-row.field-render_as_html_extra p {
     padding-left: 1.25rem !important; }
+  form .inline-related .has_original.dynamic-items td.original p,
+  .popover-content .inline-related .has_original.dynamic-items td.original p {
+    padding-left: 2rem !important; }
+  form .inline-related .field-unit_price,
+  .popover-content .inline-related .field-unit_price {
+    text-align: right; }
   form .related-widget-wrapper,
   .popover-content .related-widget-wrapper {
     float: none; }
@@ -9547,6 +9549,9 @@ form,
   .popover-content .aligned p.help {
     font-size: 10px !important;
     margin-top: 5px !important; }
+  form .dynamic-orderpayment_set td.original p,
+  .popover-content .dynamic-orderpayment_set td.original p {
+    display: none; }
 
 @media screen and (max-width: 810px) {
   form .form-row .filer-dropzone .dz-message {
