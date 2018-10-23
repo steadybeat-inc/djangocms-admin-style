@@ -1260,7 +1260,8 @@ form,
         .has_original.dynamic-items td.original p {
             padding-left: 1rem 2rem !important;
         }
-        .field-unit_price {
+        .field-get_unit_price,
+        .field-get_line_total {
             text-align: right;
         }
         table tbody tr.dynamic-orderpayment_set {

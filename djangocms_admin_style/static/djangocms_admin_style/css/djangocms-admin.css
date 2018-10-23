@@ -9517,8 +9517,10 @@ form,
   form .inline-related .has_original.dynamic-items td.original p,
   .popover-content .inline-related .has_original.dynamic-items td.original p {
     padding-left: 1rem 2rem !important; }
-  form .inline-related .field-unit_price,
-  .popover-content .inline-related .field-unit_price {
+  form .inline-related .field-get_unit_price,
+  form .inline-related .field-get_line_total,
+  .popover-content .inline-related .field-get_unit_price,
+  .popover-content .inline-related .field-get_line_total {
     text-align: right; }
   form .inline-related table tbody tr.dynamic-orderpayment_set td,
   .popover-content .inline-related table tbody tr.dynamic-orderpayment_set td {
