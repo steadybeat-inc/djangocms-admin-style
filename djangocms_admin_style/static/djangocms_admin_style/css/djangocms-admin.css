@@ -9511,9 +9511,9 @@ form,
   form .form-row.field-render_as_html_extra p,
   .popover-content .form-row.field-render_as_html_extra p {
     padding-left: 1.25rem !important; }
-  form .inline-related .has_original td.orifginal p,
-  .popover-content .inline-related .has_original td.orifginal p {
-    padding-left: 2rem !important; }
+  form .inline-related .has_original td.original p,
+  .popover-content .inline-related .has_original td.original p {
+    padding-left: 2.15rem !important; }
   form .inline-related .field-get_unit_price,
   form .inline-related .field-get_line_total,
   .popover-content .inline-related .field-get_unit_price,
