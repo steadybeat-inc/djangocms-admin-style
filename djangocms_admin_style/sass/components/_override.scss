@@ -210,6 +210,7 @@ kbd,
 label,
 li,
 p,
+pre,
 .form-row p,
 strong,
 textarea,
@@ -314,6 +315,7 @@ textarea {
     color: $color-input;
 }
 p,
+.form-row pre,
 .description,
 .timezonewarning {
     color: $gray-mist !important;
@@ -471,8 +473,48 @@ body {
             #changelist-filter {
                 background-color: $skin-color !important;
             }
-            .paginator {
-                box-shadow: none;
+            .results + .paginator {
+                box-shadow: none !important;
+                border: 1px solid lighten($skin-color, 10%) !important;
+                border-radius: $border-radius-base !important;
+                clear: both;
+                height: 2rem;
+                line-height: 2rem;
+                margin: 1rem 0 !important;
+                padding: 0 1rem !important;
+                vertical-align: middle;
+                width: auto !important;
+                * {
+                    height: 2rem;
+                    line-height: 2rem;
+                    padding: 0 .6rem;
+                }
+                a,
+                span.this-page {
+                    border-right: 1px solid lighten($skin-color, 10%);
+                    display: block;
+                    float: left;
+                    margin: 0;
+                    &:first-child {
+                        margin-left: -1rem;
+                    }
+                    &:last-child {
+                        margin-right: 1rem;
+                    }
+                }
+                span.this-page {
+                    background-color: darken($color-primary, 10%);
+                    color: $white;
+                    font-weight: bold;
+
+                }
+                a {
+                    color: $color-primary;
+                    background: darken($skin-color, 5%) !important;
+                }
+                a:hover {
+                    background: lighten($skin-color, 5%) !important;
+                }
             }
         }
         .actions {
@@ -485,7 +527,6 @@ body {
             }
         }
         .paginator {
-            box-shadow: none !important;
         }
         .results {
             box-shadow: none !important;
@@ -1208,6 +1249,7 @@ form,
                 margin-left: 6px;
             }
         }
+        #id_import_file,
         .filer-dropzone,
         .filer-dropzone.filer-dropzone-mobile {
             background-color: lighten($skin-color, 5%) !important;
@@ -1934,12 +1976,16 @@ a.cms-pagetree-header-lang:link {
 .change-list table,
 .tabular table,
 .results table,
+.store-order.change-form #content table,
 #change-history {
     background: url("../img/bg-pattern-carbon.png") darken($skin-color, 5%) !important;
-    border: 1px solid lighten($skin-color, 5%);
-    border-radius: $border-radius-base;
+    border: 1px solid lighten($skin-color, 5%) !important;
+    border-collapse: separate;
+    border-radius: $border-radius-base !important;
+    width: 100%;
 
     thead {
+        border-radius: $border-radius-base !important;
         th {
             background-color: lighten($skin-color, 5%) !important;
             border-bottom: 1px solid lighten($skin-color, 5%);
@@ -1954,6 +2000,9 @@ a.cms-pagetree-header-lang:link {
             }
         }
     }
+    tbody {
+        border-radius: $border-radius-base !important;
+    }
     tbody tr {
         &.selected {
             color: $gray-lighter;
@@ -1967,6 +2016,7 @@ a.cms-pagetree-header-lang:link {
             border-bottom: 1px dotted $skin-color;
             color: $gray-light !important;
             font-weight: 200;
+            padding: 10px;
         }
         td.field-app_config,
         td.field-app_config.nowrap{
