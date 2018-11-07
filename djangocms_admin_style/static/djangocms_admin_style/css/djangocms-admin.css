@@ -6578,9 +6578,11 @@ body.dashboard #container .breadcrumbs {
   .cms-content-wizard .choice .info {
     font-size: 12px; }
 
+.change-list #changelist #changelist-filter,
 .change-list #changelist.filtered #changelist-filter {
   background-color: #303639 !important; }
 
+.change-list #changelist .results + .paginator,
 .change-list #changelist.filtered .results + .paginator {
   box-shadow: none !important;
   border: 1px solid #475055 !important;
@@ -6592,58 +6594,77 @@ body.dashboard #container .breadcrumbs {
   padding: 0 1rem !important;
   vertical-align: middle;
   width: auto !important; }
+  .change-list #changelist .results + .paginator *,
   .change-list #changelist.filtered .results + .paginator * {
     height: 2rem;
     line-height: 2rem;
     padding: 0 .6rem; }
+  .change-list #changelist .results + .paginator a,
+  .change-list #changelist .results + .paginator span.this-page,
   .change-list #changelist.filtered .results + .paginator a,
   .change-list #changelist.filtered .results + .paginator span.this-page {
     border-right: 1px solid #475055;
     display: block;
     float: left;
     margin: 0; }
+    .change-list #changelist .results + .paginator a:first-child,
+    .change-list #changelist .results + .paginator span.this-page:first-child,
     .change-list #changelist.filtered .results + .paginator a:first-child,
     .change-list #changelist.filtered .results + .paginator span.this-page:first-child {
       margin-left: -1rem; }
+    .change-list #changelist .results + .paginator a:last-child,
+    .change-list #changelist .results + .paginator span.this-page:last-child,
     .change-list #changelist.filtered .results + .paginator a:last-child,
     .change-list #changelist.filtered .results + .paginator span.this-page:last-child {
       margin-right: 1rem; }
+  .change-list #changelist .results + .paginator span.this-page,
   .change-list #changelist.filtered .results + .paginator span.this-page {
     background-color: #466d8a;
     color: #fff;
     font-weight: bold; }
+  .change-list #changelist .results + .paginator a,
   .change-list #changelist.filtered .results + .paginator a {
     color: #5887ab;
     background: #24292b !important; }
+  .change-list #changelist .results + .paginator a:hover,
   .change-list #changelist.filtered .results + .paginator a:hover {
     background: #3c4347 !important; }
 
-.change-list #changelist .actions label {
+.change-list #changelist .actions label,
+.change-list #changelist.filtered .actions label {
   font-size: 12px !important;
   line-height: 38px; }
 
-.change-list #changelist .actions select {
+.change-list #changelist .actions select,
+.change-list #changelist.filtered .actions select {
   display: inline-block; }
 
-.change-list #changelist .results {
+.change-list #changelist .results,
+.change-list #changelist.filtered .results {
   box-shadow: none !important; }
-  .change-list #changelist .results table {
+  .change-list #changelist .results table,
+  .change-list #changelist.filtered .results table {
     background: #24292b;
     border: 1px solid #475055;
     border-radius: 3px; }
 
-.change-list #changelist #changelist-filter {
+.change-list #changelist #changelist-filter,
+.change-list #changelist.filtered #changelist-filter {
   background-color: #303639 !important; }
   .change-list #changelist #changelist-filter h2,
-  .change-list #changelist #changelist-filter h3 {
+  .change-list #changelist #changelist-filter h3,
+  .change-list #changelist.filtered #changelist-filter h2,
+  .change-list #changelist.filtered #changelist-filter h3 {
     margin: 0 !important;
     padding-left: 0 !important; }
-  .change-list #changelist #changelist-filter h2 {
+  .change-list #changelist #changelist-filter h2,
+  .change-list #changelist.filtered #changelist-filter h2 {
     border-bottom: solid 1px #24292b;
     color: #bfbfbf;
     font-size: 16px !important;
     padding: 10px 0 10px 0 !important; }
-  .change-list #changelist #changelist-filter h3 {
+  .change-list #changelist #changelist-filter h3,
+  .change-list #changelist.filtered #changelist-filter h3 {
     border-bottom: solid 1px #24292b;
     border-top: solid 1px #3c4347;
     color: #bfbfbf;
@@ -6652,29 +6673,41 @@ body.dashboard #container .breadcrumbs {
     margin: 0 !important;
     padding: 15px 0 5px 0 !important; }
   .change-list #changelist #changelist-filter ul,
-  .change-list #changelist #changelist-filter .admindatefilter {
+  .change-list #changelist #changelist-filter .admindatefilter,
+  .change-list #changelist.filtered #changelist-filter ul,
+  .change-list #changelist.filtered #changelist-filter .admindatefilter {
     border-bottom: solid 1px #24292b;
     border-top: solid 1px #3c4347;
     margin: 0 !important;
     padding: 5px 0 5px 10px; }
     .change-list #changelist #changelist-filter ul:last-child,
-    .change-list #changelist #changelist-filter .admindatefilter:last-child {
+    .change-list #changelist #changelist-filter .admindatefilter:last-child,
+    .change-list #changelist.filtered #changelist-filter ul:last-child,
+    .change-list #changelist.filtered #changelist-filter .admindatefilter:last-child {
       border-bottom: none !important; }
     .change-list #changelist #changelist-filter ul .datetimeshortcuts a:first-child,
-    .change-list #changelist #changelist-filter .admindatefilter .datetimeshortcuts a:first-child {
+    .change-list #changelist #changelist-filter .admindatefilter .datetimeshortcuts a:first-child,
+    .change-list #changelist.filtered #changelist-filter ul .datetimeshortcuts a:first-child,
+    .change-list #changelist.filtered #changelist-filter .admindatefilter .datetimeshortcuts a:first-child {
       left: 3.5rem;
       position: absolute;
       top: 0;
       width: 2.5rem; }
     .change-list #changelist #changelist-filter ul .datetimeshortcuts a:last-child,
-    .change-list #changelist #changelist-filter .admindatefilter .datetimeshortcuts a:last-child {
+    .change-list #changelist #changelist-filter .admindatefilter .datetimeshortcuts a:last-child,
+    .change-list #changelist.filtered #changelist-filter ul .datetimeshortcuts a:last-child,
+    .change-list #changelist.filtered #changelist-filter .admindatefilter .datetimeshortcuts a:last-child {
       left: .5rem;
       position: absolute;
       top: 0; }
     .change-list #changelist #changelist-filter ul input[type='submit'],
     .change-list #changelist #changelist-filter ul .button,
     .change-list #changelist #changelist-filter .admindatefilter input[type='submit'],
-    .change-list #changelist #changelist-filter .admindatefilter .button {
+    .change-list #changelist #changelist-filter .admindatefilter .button,
+    .change-list #changelist.filtered #changelist-filter ul input[type='submit'],
+    .change-list #changelist.filtered #changelist-filter ul .button,
+    .change-list #changelist.filtered #changelist-filter .admindatefilter input[type='submit'],
+    .change-list #changelist.filtered #changelist-filter .admindatefilter .button {
       background-image: none !important;
       margin-bottom: 0;
       padding: 6px 20px !important;
@@ -6696,7 +6729,11 @@ body.dashboard #container .breadcrumbs {
       .change-list #changelist #changelist-filter ul input[type='submit']:focus,
       .change-list #changelist #changelist-filter ul .button:focus,
       .change-list #changelist #changelist-filter .admindatefilter input[type='submit']:focus,
-      .change-list #changelist #changelist-filter .admindatefilter .button:focus {
+      .change-list #changelist #changelist-filter .admindatefilter .button:focus,
+      .change-list #changelist.filtered #changelist-filter ul input[type='submit']:focus,
+      .change-list #changelist.filtered #changelist-filter ul .button:focus,
+      .change-list #changelist.filtered #changelist-filter .admindatefilter input[type='submit']:focus,
+      .change-list #changelist.filtered #changelist-filter .admindatefilter .button:focus {
         color: #bfbfbf !important;
         background-color: #24292b !important;
         border-color: #6993b4 !important;
@@ -6704,7 +6741,11 @@ body.dashboard #container .breadcrumbs {
       .change-list #changelist #changelist-filter ul input[type='submit']:hover,
       .change-list #changelist #changelist-filter ul .button:hover,
       .change-list #changelist #changelist-filter .admindatefilter input[type='submit']:hover,
-      .change-list #changelist #changelist-filter .admindatefilter .button:hover {
+      .change-list #changelist #changelist-filter .admindatefilter .button:hover,
+      .change-list #changelist.filtered #changelist-filter ul input[type='submit']:hover,
+      .change-list #changelist.filtered #changelist-filter ul .button:hover,
+      .change-list #changelist.filtered #changelist-filter .admindatefilter input[type='submit']:hover,
+      .change-list #changelist.filtered #changelist-filter .admindatefilter .button:hover {
         color: #bfbfbf !important;
         background-color: #475055 !important;
         border-color: #535d63 !important;
@@ -6715,7 +6756,15 @@ body.dashboard #container .breadcrumbs {
       .change-list #changelist #changelist-filter .admindatefilter input[type='submit'].active,
       .change-list #changelist #changelist-filter .admindatefilter input[type='submit']:active,
       .change-list #changelist #changelist-filter .admindatefilter .button.active,
-      .change-list #changelist #changelist-filter .admindatefilter .button:active {
+      .change-list #changelist #changelist-filter .admindatefilter .button:active,
+      .change-list #changelist.filtered #changelist-filter ul input[type='submit'].active,
+      .change-list #changelist.filtered #changelist-filter ul input[type='submit']:active,
+      .change-list #changelist.filtered #changelist-filter ul .button.active,
+      .change-list #changelist.filtered #changelist-filter ul .button:active,
+      .change-list #changelist.filtered #changelist-filter .admindatefilter input[type='submit'].active,
+      .change-list #changelist.filtered #changelist-filter .admindatefilter input[type='submit']:active,
+      .change-list #changelist.filtered #changelist-filter .admindatefilter .button.active,
+      .change-list #changelist.filtered #changelist-filter .admindatefilter .button:active {
         color: #bfbfbf !important;
         background-color: #24292b !important;
         border-color: #d1675a !important;
@@ -6732,7 +6781,23 @@ body.dashboard #container .breadcrumbs {
         .change-list #changelist #changelist-filter .admindatefilter .button.active:hover,
         .change-list #changelist #changelist-filter .admindatefilter .button.active:focus,
         .change-list #changelist #changelist-filter .admindatefilter .button:active:hover,
-        .change-list #changelist #changelist-filter .admindatefilter .button:active:focus {
+        .change-list #changelist #changelist-filter .admindatefilter .button:active:focus,
+        .change-list #changelist.filtered #changelist-filter ul input[type='submit'].active:hover,
+        .change-list #changelist.filtered #changelist-filter ul input[type='submit'].active:focus,
+        .change-list #changelist.filtered #changelist-filter ul input[type='submit']:active:hover,
+        .change-list #changelist.filtered #changelist-filter ul input[type='submit']:active:focus,
+        .change-list #changelist.filtered #changelist-filter ul .button.active:hover,
+        .change-list #changelist.filtered #changelist-filter ul .button.active:focus,
+        .change-list #changelist.filtered #changelist-filter ul .button:active:hover,
+        .change-list #changelist.filtered #changelist-filter ul .button:active:focus,
+        .change-list #changelist.filtered #changelist-filter .admindatefilter input[type='submit'].active:hover,
+        .change-list #changelist.filtered #changelist-filter .admindatefilter input[type='submit'].active:focus,
+        .change-list #changelist.filtered #changelist-filter .admindatefilter input[type='submit']:active:hover,
+        .change-list #changelist.filtered #changelist-filter .admindatefilter input[type='submit']:active:focus,
+        .change-list #changelist.filtered #changelist-filter .admindatefilter .button.active:hover,
+        .change-list #changelist.filtered #changelist-filter .admindatefilter .button.active:focus,
+        .change-list #changelist.filtered #changelist-filter .admindatefilter .button:active:hover,
+        .change-list #changelist.filtered #changelist-filter .admindatefilter .button:active:focus {
           color: #bfbfbf !important;
           background-color: #303639 !important;
           border-color: #d7796e !important; }
@@ -6742,7 +6807,15 @@ body.dashboard #container .breadcrumbs {
       .change-list #changelist #changelist-filter .admindatefilter input[type='submit'].active,
       .change-list #changelist #changelist-filter .admindatefilter input[type='submit']:active,
       .change-list #changelist #changelist-filter .admindatefilter .button.active,
-      .change-list #changelist #changelist-filter .admindatefilter .button:active {
+      .change-list #changelist #changelist-filter .admindatefilter .button:active,
+      .change-list #changelist.filtered #changelist-filter ul input[type='submit'].active,
+      .change-list #changelist.filtered #changelist-filter ul input[type='submit']:active,
+      .change-list #changelist.filtered #changelist-filter ul .button.active,
+      .change-list #changelist.filtered #changelist-filter ul .button:active,
+      .change-list #changelist.filtered #changelist-filter .admindatefilter input[type='submit'].active,
+      .change-list #changelist.filtered #changelist-filter .admindatefilter input[type='submit']:active,
+      .change-list #changelist.filtered #changelist-filter .admindatefilter .button.active,
+      .change-list #changelist.filtered #changelist-filter .admindatefilter .button:active {
         background-image: none !important; }
       .change-list #changelist #changelist-filter ul input[type='submit'][disabled], .change-list #changelist #changelist-filter ul input[type='submit'][disabled]:hover, .change-list #changelist #changelist-filter ul input[type='submit'][disabled]:focus, .change-list #changelist #changelist-filter ul input[type='submit'][disabled]:active,
       .change-list #changelist #changelist-filter ul .button[disabled],
@@ -6756,7 +6829,23 @@ body.dashboard #container .breadcrumbs {
       .change-list #changelist #changelist-filter .admindatefilter .button[disabled],
       .change-list #changelist #changelist-filter .admindatefilter .button[disabled]:hover,
       .change-list #changelist #changelist-filter .admindatefilter .button[disabled]:focus,
-      .change-list #changelist #changelist-filter .admindatefilter .button[disabled]:active {
+      .change-list #changelist #changelist-filter .admindatefilter .button[disabled]:active,
+      .change-list #changelist.filtered #changelist-filter ul input[type='submit'][disabled],
+      .change-list #changelist.filtered #changelist-filter ul input[type='submit'][disabled]:hover,
+      .change-list #changelist.filtered #changelist-filter ul input[type='submit'][disabled]:focus,
+      .change-list #changelist.filtered #changelist-filter ul input[type='submit'][disabled]:active,
+      .change-list #changelist.filtered #changelist-filter ul .button[disabled],
+      .change-list #changelist.filtered #changelist-filter ul .button[disabled]:hover,
+      .change-list #changelist.filtered #changelist-filter ul .button[disabled]:focus,
+      .change-list #changelist.filtered #changelist-filter ul .button[disabled]:active,
+      .change-list #changelist.filtered #changelist-filter .admindatefilter input[type='submit'][disabled],
+      .change-list #changelist.filtered #changelist-filter .admindatefilter input[type='submit'][disabled]:hover,
+      .change-list #changelist.filtered #changelist-filter .admindatefilter input[type='submit'][disabled]:focus,
+      .change-list #changelist.filtered #changelist-filter .admindatefilter input[type='submit'][disabled]:active,
+      .change-list #changelist.filtered #changelist-filter .admindatefilter .button[disabled],
+      .change-list #changelist.filtered #changelist-filter .admindatefilter .button[disabled]:hover,
+      .change-list #changelist.filtered #changelist-filter .admindatefilter .button[disabled]:focus,
+      .change-list #changelist.filtered #changelist-filter .admindatefilter .button[disabled]:active {
         background-color: rgba(60, 67, 71, 0.4) !important;
         border-color: rgba(71, 80, 85, 0.4) !important;
         color: rgba(191, 191, 191, 0.4) true;
@@ -6774,9 +6863,26 @@ body.dashboard #container .breadcrumbs {
         .change-list #changelist #changelist-filter .admindatefilter .button[disabled]:before,
         .change-list #changelist #changelist-filter .admindatefilter .button[disabled]:hover:before,
         .change-list #changelist #changelist-filter .admindatefilter .button[disabled]:focus:before,
-        .change-list #changelist #changelist-filter .admindatefilter .button[disabled]:active:before {
+        .change-list #changelist #changelist-filter .admindatefilter .button[disabled]:active:before,
+        .change-list #changelist.filtered #changelist-filter ul input[type='submit'][disabled]:before,
+        .change-list #changelist.filtered #changelist-filter ul input[type='submit'][disabled]:hover:before,
+        .change-list #changelist.filtered #changelist-filter ul input[type='submit'][disabled]:focus:before,
+        .change-list #changelist.filtered #changelist-filter ul input[type='submit'][disabled]:active:before,
+        .change-list #changelist.filtered #changelist-filter ul .button[disabled]:before,
+        .change-list #changelist.filtered #changelist-filter ul .button[disabled]:hover:before,
+        .change-list #changelist.filtered #changelist-filter ul .button[disabled]:focus:before,
+        .change-list #changelist.filtered #changelist-filter ul .button[disabled]:active:before,
+        .change-list #changelist.filtered #changelist-filter .admindatefilter input[type='submit'][disabled]:before,
+        .change-list #changelist.filtered #changelist-filter .admindatefilter input[type='submit'][disabled]:hover:before,
+        .change-list #changelist.filtered #changelist-filter .admindatefilter input[type='submit'][disabled]:focus:before,
+        .change-list #changelist.filtered #changelist-filter .admindatefilter input[type='submit'][disabled]:active:before,
+        .change-list #changelist.filtered #changelist-filter .admindatefilter .button[disabled]:before,
+        .change-list #changelist.filtered #changelist-filter .admindatefilter .button[disabled]:hover:before,
+        .change-list #changelist.filtered #changelist-filter .admindatefilter .button[disabled]:focus:before,
+        .change-list #changelist.filtered #changelist-filter .admindatefilter .button[disabled]:active:before {
           color: rgba(191, 191, 191, 0.4) true; }
-  .change-list #changelist #changelist-filter li {
+  .change-list #changelist #changelist-filter li,
+  .change-list #changelist.filtered #changelist-filter li {
     font-size: 12px;
     margin: 0;
     padding: 5px 0; }
@@ -11134,14 +11240,15 @@ a.cms-pagetree-header-lang:link {
 .results table tbody tr:hover {
   background-color: #303639; }
 
+#changelist .paginator,
 #change-list .paginator,
 .change-list .paginator,
 .change-list #changelist .paginator,
 .change-list #changelist.filtered .paginator,
 .change-list #changelist .results + .paginator {
-  box-shadow: 0 0 0 #303639 !important;
-  background: none !important;
-  border: none !important;
+  box-shadow: 0 0 0 #303639;
+  background: none;
+  border: none¥;
   color: #bfbfbf !important; }
 
 #change-history td p,

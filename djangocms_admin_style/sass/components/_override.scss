@@ -468,53 +468,52 @@ body {
 // CHANGELIST
 
 .change-list {
-    #changelist {
-        &.filtered {
-            #changelist-filter {
-                background-color: $skin-color !important;
-            }
-            .results + .paginator {
-                box-shadow: none !important;
-                border: 1px solid lighten($skin-color, 10%) !important;
-                border-radius: $border-radius-base !important;
-                clear: both;
+    #changelist,
+    #changelist.filtered {
+        #changelist-filter {
+            background-color: $skin-color !important;
+        }
+        .results + .paginator {
+            box-shadow: none !important;
+            border: 1px solid lighten($skin-color, 10%) !important;
+            border-radius: $border-radius-base !important;
+            clear: both;
+            height: 2rem;
+            line-height: 2rem;
+            margin: 1rem 0 !important;
+            padding: 0 1rem !important;
+            vertical-align: middle;
+            width: auto !important;
+            * {
                 height: 2rem;
                 line-height: 2rem;
-                margin: 1rem 0 !important;
-                padding: 0 1rem !important;
-                vertical-align: middle;
-                width: auto !important;
-                * {
-                    height: 2rem;
-                    line-height: 2rem;
-                    padding: 0 .6rem;
+                padding: 0 .6rem;
+            }
+            a,
+            span.this-page {
+                border-right: 1px solid lighten($skin-color, 10%);
+                display: block;
+                float: left;
+                margin: 0;
+                &:first-child {
+                    margin-left: -1rem;
                 }
-                a,
-                span.this-page {
-                    border-right: 1px solid lighten($skin-color, 10%);
-                    display: block;
-                    float: left;
-                    margin: 0;
-                    &:first-child {
-                        margin-left: -1rem;
-                    }
-                    &:last-child {
-                        margin-right: 1rem;
-                    }
+                &:last-child {
+                    margin-right: 1rem;
                 }
-                span.this-page {
-                    background-color: darken($color-primary, 10%);
-                    color: $white;
-                    font-weight: bold;
+            }
+            span.this-page {
+                background-color: darken($color-primary, 10%);
+                color: $white;
+                font-weight: bold;
 
-                }
-                a {
-                    color: $color-primary;
-                    background: darken($skin-color, 5%) !important;
-                }
-                a:hover {
-                    background: lighten($skin-color, 5%) !important;
-                }
+            }
+            a {
+                color: $color-primary;
+                background: darken($skin-color, 5%) !important;
+            }
+            a:hover {
+                background: lighten($skin-color, 5%) !important;
             }
         }
         .actions {
@@ -2076,15 +2075,16 @@ a.cms-pagetree-header-lang:link {
     background-color: $skin-color;
 }
 
+#changelist .paginator,
 #change-list .paginator,
 .change-list .paginator,
 .change-list #changelist .paginator,
 .change-list #changelist.filtered .paginator,
 .change-list #changelist .results+.paginator {
-    box-shadow: 0 0 0 $skin-color !important;
+    box-shadow: 0 0 0 $skin-color;
 
-    background: none !important;
-    border: none !important;
+    background: none;
+    border: none¥;
     color: $gray-light !important;
 }
 #change-history td p,
