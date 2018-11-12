@@ -5956,6 +5956,10 @@ a {
 body:not(.cms-admin-sideframe) #header {
   display: none; }
 
+.disabled,
+*:disabled {
+  opacity: .4; }
+
 .popover {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
   border-bottom: 1px solid #3c4347 !important;
@@ -11248,7 +11252,7 @@ a.cms-pagetree-header-lang:link {
 .change-list #changelist .results + .paginator {
   box-shadow: 0 0 0 #303639;
   background: none;
-  border: none¥;
+  border: none;
   color: #bfbfbf !important; }
 
 #change-history td p,

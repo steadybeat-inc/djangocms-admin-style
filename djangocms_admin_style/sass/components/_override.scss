@@ -230,6 +230,12 @@ body:not(.cms-admin-sideframe) {
     }
 }
 
+.disabled,
+*:disabled {
+    opacity: .4;
+}
+
+
 // Popover
 
 .popover {
@@ -2084,7 +2090,7 @@ a.cms-pagetree-header-lang:link {
     box-shadow: 0 0 0 $skin-color;
 
     background: none;
-    border: none¥;
+    border: none;
     color: $gray-light !important;
 }
 #change-history td p,
