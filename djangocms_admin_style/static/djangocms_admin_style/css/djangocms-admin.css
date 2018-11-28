@@ -6584,7 +6584,8 @@ body.dashboard #container .breadcrumbs {
 
 .change-list #changelist #changelist-filter,
 .change-list #changelist.filtered #changelist-filter {
-  background-color: #303639 !important; }
+  background-color: #303639 !important;
+  max-height: inherit !important; }
 
 .change-list #changelist .results + .paginator,
 .change-list #changelist.filtered .results + .paginator {

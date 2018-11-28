@@ -478,6 +478,7 @@ body {
     #changelist.filtered {
         #changelist-filter {
             background-color: $skin-color !important;
+            max-height: inherit !important;
         }
         .results + .paginator {
             box-shadow: none !important;
