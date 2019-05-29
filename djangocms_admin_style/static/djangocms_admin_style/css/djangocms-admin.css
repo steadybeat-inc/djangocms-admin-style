@@ -1695,6 +1695,11 @@ form {
       clear: both; }
     form .form-row:not(tr) .vForeignKeyRawIdAdminField, form .form-row:not(tr) .vManyToManyRawIdAdminField {
       width: calc(100% - 48px) !important; }
+  form .form-row .attributes {
+    padding-bottom: 10px; 
+    float: left; 
+    width: 100%;
+  }
   form .form-row {
     overflow: visible;
     border-bottom: 0; }
